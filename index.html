@@ -65,13 +65,12 @@ header .nm{font-weight:800;letter-spacing:.5px;white-space:nowrap}
 #pl .bar{display:flex;align-items:center;gap:10px;padding:10px 14px;flex-wrap:wrap}.th{width:46px;height:46px;border-radius:12px;object-fit:cover;background:var(--pu)}.pi{width:170px;min-width:0}.pi b,.pi small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ctl{display:flex;gap:2px;align-items:center}.ctl button,#pl .bar>button,.vl button{width:36px;height:36px;border-radius:50%;font-size:16px;color:#eef}.ctl button.a{color:var(--li)}.ctl .big{background:linear-gradient(135deg,var(--pu),var(--bl));width:44px;height:44px}
 .sk{flex:1;display:flex;gap:8px;align-items:center;min-width:150px}.sk input{flex:1}.sk small{color:#c8c5f0}.vl{display:flex;align-items:center;gap:4px}.vl input{width:80px}
-.vz{display:flex;gap:2px;align-items:flex-end;height:22px}.vz i{width:4px;height:4px;background:var(--cy);border-radius:2px}.on .vz i{animation:vz .8s infinite ease-in-out}.vz i:nth-child(2){animation-delay:.2s!important}.vz i:nth-child(3){animation-delay:.4s!important}.vz i:nth-child(4){animation-delay:.1s!important}@keyframes vz{50%{height:22px}}
 #pls{max-height:0;overflow:hidden;transition:.3s;padding:0 14px}.ex #pls{max-height:62vh;overflow:auto;padding:0 14px 14px}#pls #pp{width:min(320px,100%);aspect-ratio:16/9;border-radius:12px;display:block;margin-bottom:8px}
 input[type=range]{accent-color:var(--pu)}
 #ts{position:fixed;top:14px;right:14px;z-index:200;display:flex;flex-direction:column;gap:8px}.t{padding:12px 16px;border-radius:14px;background:var(--pn);border-left:4px solid var(--li);box-shadow:0 8px 24px #0008;animation:up .3s;max-width:300px;color:var(--tx)}.t.err{border-color:var(--pk)}.t.x{opacity:0;transform:translateX(30px);transition:.4s}
 .noanim *,.noanim{animation:none!important;transition:none!important}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media(max-width:820px){#shell{margin:0;border-radius:0;border:0}#sb{position:fixed;left:-260px;top:0;height:100vh;width:240px!important}#sb.open{left:0;box-shadow:0 0 0 100vmax #0008}#sb.mini .tx{display:inline}#mb2{display:block}header .nm,#nd,#cb{display:none}.hero{padding:22px;flex-direction:column;align-items:flex-start}.hl{width:100px;height:100px;padding:22px}#main{padding:14px 12px 230px}.vl,.vz{display:none}.pi{width:calc(100% - 200px);flex:1}.sk{order:9;flex-basis:100%}}
+@media(max-width:820px){#shell{margin:0;border-radius:0;border:0}#sb{position:fixed;left:-260px;top:0;height:100vh;width:240px!important}#sb.open{left:0;box-shadow:0 0 0 100vmax #0008}#sb.mini .tx{display:inline}#mb2{display:block}header .nm,#nd,#cb{display:none}.hero{padding:22px;flex-direction:column;align-items:flex-start}.hl{width:100px;height:100px;padding:22px}#main{padding:14px 12px 230px}.vl{display:none}.pi{width:calc(100% - 200px);flex:1}.sk{order:9;flex-basis:100%}}
 .bdg{background:var(--pk);color:#fff;border-radius:99px;padding:0 7px;font-size:11px;margin-left:6px;font-weight:700}
 .wx{display:flex;gap:6px;align-items:center;padding:6px 10px;border-radius:12px;background:var(--p2);font-size:13px;white-space:nowrap}
 .fb{position:relative;margin-bottom:16px;padding:20px 22px;border-radius:22px;background:linear-gradient(120deg,#0f766e,#1d4ed8aa 65%,#7c4dff);color:#fff;border:1px solid #ffffff33;box-shadow:0 12px 40px #22d3ee44}.fb h2{letter-spacing:3px}.x2{position:absolute;right:10px;top:10px;width:34px;height:34px;border-radius:10px;background:#0006;color:#fff}
@@ -81,19 +80,27 @@ input[type=range]{accent-color:var(--pu)}
 .st-pending{color:var(--li)}.st-approved{color:var(--cy)}.st-rejected{color:var(--pk)}.st-expired{color:#fbbf24}
 .tw{overflow-x:auto}.tw table{border-collapse:collapse;min-width:660px;width:100%;font-size:13px}.tw td,.tw th{padding:6px 8px;border-bottom:1px solid var(--bd);text-align:left}
 @media(max-width:820px){.wx{padding:4px 8px;font-size:12px}header{flex-wrap:wrap;gap:6px}.dot{display:none}#ab{font-size:12px}}
+
 </style></head><body>
 <div id="shell">
 <aside id="sb"><div class="brand"><img class="lg" alt="RZ"><span class="tx">RIZA'S<br>DIGITAL ROOM</span></div><nav id="nav"></nav><button class="bt" style="width:100%;margin-top:12px" data-a="col" id="cb">⇔ <span class="tx">Ciutkan</span></button></aside>
 <div id="app">
 <header><button class="ib" id="mb2" data-a="menu" aria-label="Menu">☰</button><img class="lg" alt="RZ"><span class="nm">RIZA'S DIGITAL ROOM</span><span class="dot" title="Online"></span><span class="sp"></span><span class="wx" id="wx" data-a="wxr" title="Cuaca Banjarmasin (ketuk untuk perbarui)" style="cursor:pointer">…</span><div style="text-align:right"><div id="nt">--:--:--</div><div id="nd"></div></div><button class="ib" data-a="go" data-v="cari" aria-label="Cari">🔍</button><button class="ib" data-a="tema" aria-label="Tema">🌓</button><button class="bt" id="ab" data-a="adm" style="padding:9px 12px">👤 Login Admin</button></header>
 <main id="main"></main></div></div>
-<div id="pl"><div class="bar"><img id="pth" class="th" alt=""><div class="pi"><b id="ptt">Belum ada lagu</b><small id="pta">Tambahkan link YouTube</small></div><div class="vz"><i></i><i></i><i></i><i></i></div>
+<div id="pl"><div class="bar"><img id="pth" class="th" alt=""><div class="pi"><b id="ptt">Belum ada lagu</b><small id="pta">Tambahkan link YouTube</small></div>
 <div class="ctl"><button data-a="shuf" id="bs" title="Acak">🔀</button><button data-a="pprev" title="Sebelumnya">⏮</button><button class="big" id="pb" data-a="ptog" title="Putar/Jeda">▶</button><button data-a="pnext" title="Berikutnya">⏭</button><button data-a="rep" id="br" title="Ulangi">🔁</button></div>
 <div class="sk"><small id="pc">0:00</small><input type="range" id="psk" min="0" max="1000" value="0"><small id="pd">0:00</small></div>
 <div class="vl"><button data-a="mute" id="bm">🔊</button><input type="range" id="pvl" min="0" max="100" value="70"></div>
 <button data-a="adds" title="Tambahkan Lagu YouTube">＋</button><button data-a="pexp" title="Playlist">☰</button></div>
-<div id="pls"><a id="pyt" class="bt" target="_blank" rel="noopener" style="display:none;margin:0 0 8px">▶ Buka di YouTube</a><div id="pp"></div><canvas id="vzc" style="width:100%;height:90px;border-radius:12px;background:#0b0a1f;margin:8px 0 4px;display:block"></canvas><div class="row" style="margin-bottom:8px"><button class="bt" data-a="vmic" id="vmb" style="padding:7px 12px">🎙 Spektrum nyata via mikrofon</button><small id="vmt" style="flex:1;min-width:180px;color:#c8c5f0">Mode ambient (dekoratif): audio YouTube tidak dapat dibaca browser (pembatasan lintas-origin), jadi gerakan ini tidak mengikuti nada lagu.</small></div><div id="plr"></div></div></div>
+<div id="pls"><a id="pyt" class="bt" target="_blank" rel="noopener" style="display:none;margin:0 0 8px">▶ Buka di YouTube</a><div id="pp"></div><div id="plr"></div></div></div>
 <div id="ts"></div>
+<script>
+/* ===== KONFIGURASI SUPABASE — cara 2 (alternatif config.js) =====
+   Boleh diisi di sini JIKA config.js tidak dipakai/gagal terbaca. Isi hanya Project URL + anon/public key.
+   JANGAN service_role/secret key. */
+window.RIZA_INLINE={SUPABASE_URL:'',SUPABASE_ANON_KEY:''};
+</script>
+<script src="config.js"></script>
 <script>
 "use strict";
 /* ===== RIZA'S DIGITAL ROOM — satu file, tanpa backend =====
@@ -167,13 +174,6 @@ function ui(){const x=LS()[pi];$('#ptt').textContent=x?(x.cur||x.t):'Belum ada l
  const y=$('#pyt');if(x){y.href='https://www.youtube.com/watch?v='+x.v;y.style.display='inline-flex'}else y.style.display='none';const h=rows();$('#plr').innerHTML=h;const m=$('#mpl');if(m)m.innerHTML=h}
 function rows(){const l=LS();if(!l.length)return'<small>Belum ada lagu. Tambahkan link YouTube dengan tombol ＋.</small>';
  return l.map((s,i)=>'<div class="ln '+(i===pi?'on':'')+'" data-a="psel" data-i="'+i+'"><img src="'+thumb(s.v)+'" alt="" loading="lazy"><div><b>'+esc(s.t)+'</b><small>'+esc(s.a)+(i<DEF.length?' • bawaan':i>=DEF.length+D.songs.length?' • sesi ini':'')+'</small></div>'+((i>=DEF.length&&(isA()||i>=DEF.length+D.songs.length))?'<button data-a="prm" data-i="'+i+'" aria-label="Hapus">✕</button>':'')+'</div>').join('')}
-async function addSong(u){const v=ytid(u),l=v?null:ytlist(u);if(!v&&!l){toast('Link YouTube tidak valid','err');return 0}
- if(LS().some(x=>v?x.v===v&&!x.pl:x.pl===l)){toast('Sudah ada di playlist','err');return 0}
- const s=v?{v,t:'Lagu YouTube ('+v+')',a:'YouTube'}:{pl:l,v:plSeed(l),t:'Playlist YouTube',a:'YouTube'};
- if(isA()){if(sbAdm()){sbAddPl(s);slog('Tambah ke playlist permanen: '+(v||l))}else{D.songs.push(s);save();lg('Ditambahkan (lokal): '+(v||l))}}else SS.push(s);
- toast(v?'Lagu berhasil ditambahkan':'Playlist berhasil ditambahkan');ui();
- if(v)ytmeta(v).then(m=>{if(m.t){s.t=m.t;s.a=m.a||s.a;if(D.songs.includes(s))save();ui()}}).catch(()=>{});
- if(pi<0)play(LS().indexOf(s));return 1}
 setInterval(()=>{try{if(rdy&&playing&&P.getDuration){const d=P.getDuration(),c=P.getCurrentTime();$('#pc').textContent=fmt(c);$('#pd').textContent=fmt(d);if(!drag&&d)$('#psk').value=c/d*1000}}catch(e){}},500);
 /* ---- Data statis: kutipan (atribusi yang kurang pasti ditandai) ---- */
 const Q=[
@@ -189,11 +189,66 @@ const Q=[
 ['Masa depan milik mereka yang percaya pada keindahan mimpinya.','Eleanor Roosevelt','Masa depan',''],
 ['Ketenangan datang dari dalam. Jangan mencarinya di luar.','Buddha (atribusi populer)','Ketenangan',''],
 ['Kita adalah apa yang kita lakukan berulang kali. Maka keunggulan adalah kebiasaan.','Will Durant','Disiplin','The Story of Philosophy (ringkasan; sering salah dikaitkan ke Aristoteles)']];
+/* Koleksi kutipan diperluas: tokoh Indonesia & internasional.
+ * Elemen ke-4 (sumber) diisi hanya bila sumber primernya dikenal; bila kosong, UI menampilkan
+ * "Sumber atribusi belum terverifikasi." Kutipan berbahasa asing ditandai "terjemahan bebas". */
+Q.push(
+['Ing ngarsa sung tuladha, ing madya mangun karsa, tut wuri handayani. (Di depan memberi teladan, di tengah membangun semangat, di belakang memberi dorongan.)','Ki Hajar Dewantara','Pendidikan','Semboyan pendidikan Taman Siswa'],
+['Setiap orang menjadi guru, setiap rumah menjadi sekolah.','Ki Hajar Dewantara','Pendidikan',''],
+['Habis gelap terbitlah terang.','R.A. Kartini','Perjuangan','Door Duisternis tot Licht (1911); terjemahan Armijn Pane (1922)'],
+['Jangan sekali-kali meninggalkan sejarah.','Soekarno','Kebijaksanaan','Pidato 17 Agustus 1966 (“Jas Merah”)'],
+['Gotong royong adalah pembantingan tulang bersama, pemerasan keringat bersama, perjuangan bantu-membantu bersama.','Soekarno','Kepemimpinan','Pidato Lahirnya Pancasila, 1 Juni 1945 (ejaan disesuaikan)'],
+['Beri aku sepuluh pemuda, niscaya akan kuguncangkan dunia.','Soekarno','Motivasi',''],
+['Kurang cerdas dapat diperbaiki dengan belajar, kurang cakap dapat dihilangkan dengan pengalaman, tetapi tidak jujur sulit diperbaiki.','Mohammad Hatta','Kebijaksanaan',''],
+['Seorang terpelajar harus juga berlaku adil sejak dalam pikiran, apalagi dalam perbuatan.','Pramoedya Ananta Toer','Pendidikan','Bumi Manusia (1980)'],
+['Orang boleh pandai setinggi langit, tapi selama ia tidak menulis, ia akan hilang di dalam masyarakat dan dari sejarah. Menulis adalah bekerja untuk keabadian.','Pramoedya Ananta Toer','Kreativitas','Rumah Kaca (1988)'],
+['Sekali berarti, sudah itu mati.','Chairil Anwar','Perjuangan','Puisi “Diponegoro” (1943)'],
+['Aku mau hidup seribu tahun lagi.','Chairil Anwar','Motivasi','Puisi “Aku” (1943)'],
+['Lebih baik diasingkan daripada menyerah pada kemunafikan.','Soe Hok Gie','Perjuangan','Catatan Seorang Demonstran (1983)'],
+['Setinggi-tinggi ilmu, semurni-murni tauhid, sepandai-pandai siasat.','H.O.S. Tjokroaminoto','Kebijaksanaan',''],
+['Kalau hidup sekadar hidup, babi di hutan juga hidup. Kalau bekerja sekadar bekerja, kera juga bekerja.','Buya Hamka (atribusi populer)','Kehidupan',''],
+['Hidup yang tidak dipertaruhkan tidak akan pernah dimenangkan.','Sutan Sjahrir (atribusi populer)','Perjuangan',''],
+['Hidup yang tidak diperiksa tidak layak dijalani.','Socrates','Kebijaksanaan','Plato, Apology 38a (terjemahan bebas)'],
+['Jika aku telah melihat lebih jauh, itu karena berdiri di atas bahu para raksasa.','Isaac Newton','Pendidikan','Surat kepada Robert Hooke, 5 Februari 1675/76 (terjemahan bebas)'],
+['Imajinasi lebih penting daripada pengetahuan.','Albert Einstein','Kreativitas','Wawancara The Saturday Evening Post, 26 Oktober 1929 (terjemahan bebas)'],
+['Tetaplah lapar, tetaplah bodoh.','Steve Jobs','Motivasi','Pidato Stanford, 2005 (mengutip Whole Earth Catalog)'],
+['Kita hanya dapat melihat sedikit ke depan, tetapi kita dapat melihat banyak hal yang perlu dilakukan.','Alan Turing','Teknologi','“Computing Machinery and Intelligence” (1950) (terjemahan bebas)'],
+['Teknologi yang cukup maju tidak dapat dibedakan dari sihir.','Arthur C. Clarke','Teknologi','Profiles of the Future (edisi 1973), Hukum Ketiga Clarke (terjemahan bebas)'],
+['Mesin Analitis tidak berpretensi menciptakan sesuatu secara orisinal. Ia dapat melakukan apa pun yang kita tahu cara memerintahkannya.','Ada Lovelace','Teknologi','Catatan G pada terjemahan Menabrea, 1843 (terjemahan bebas)'],
+['Cara terbaik untuk memprediksi masa depan adalah dengan menciptakannya.','Alan Kay','Masa depan','Pertemuan Xerox PARC, 1971 (menurut Quote Investigator)'],
+['Saya belajar bahwa keberanian bukanlah ketiadaan rasa takut, melainkan kemenangan atasnya.','Nelson Mandela','Perjuangan','Long Walk to Freedom (1994) (terjemahan bebas)'],
+['Ketidakadilan di mana pun adalah ancaman bagi keadilan di mana-mana.','Martin Luther King Jr.','Kepemimpinan','Letter from Birmingham Jail, 1963 (terjemahan bebas)'],
+['Satu anak, satu guru, satu buku, dan satu pena dapat mengubah dunia.','Malala Yousafzai','Pendidikan','Pidato di PBB, 12 Juli 2013 (terjemahan bebas)'],
+['Ketika kita tidak lagi mampu mengubah keadaan, kita ditantang untuk mengubah diri kita sendiri.','Viktor E. Frankl','Kebijaksanaan','Man’s Search for Meaning (1946) (terjemahan bebas)'],
+['Orang yang memiliki alasan untuk hidup dapat menanggung hampir segala cara hidup.','Friedrich Nietzsche','Kehidupan','Twilight of the Idols (1888), “Maxims and Arrows” no. 12 (terjemahan bebas)'],
+['Bukan karena hidup kita pendek, tetapi karena kita menyia-nyiakan banyak darinya.','Seneca','Waktu','De Brevitate Vitae 1.1 (terjemahan bebas)'],
+['Hambatan bagi tindakan justru memajukan tindakan; apa yang menghalangi jalan menjadi jalan itu sendiri.','Marcus Aurelius','Ketenangan','Meditations 5.20 (terjemahan bebas)'],
+['Tidak ada hal besar yang pernah dicapai tanpa antusiasme.','Ralph Waldo Emerson','Motivasi','Esai “Circles” (1841) (terjemahan bebas)'],
+['Satu-satunya hal yang harus kita takuti adalah ketakutan itu sendiri.','Franklin D. Roosevelt','Kepemimpinan','Pidato pelantikan, 4 Maret 1933 (terjemahan bebas)'],
+['Saya tidak punya apa pun untuk ditawarkan selain darah, kerja keras, air mata, dan keringat.','Winston Churchill','Perjuangan','Pidato di House of Commons, 13 Mei 1940 (terjemahan bebas)'],
+['Pemerintahan dari rakyat, oleh rakyat, dan untuk rakyat tidak akan lenyap dari muka bumi.','Abraham Lincoln','Kepemimpinan','Pidato Gettysburg, 19 November 1863 (terjemahan bebas)'],
+['Tidak mungkin hidup tanpa gagal dalam sesuatu, kecuali kamu hidup begitu hati-hati sehingga lebih baik tidak hidup sama sekali.','J.K. Rowling','Kegagalan','Pidato wisuda Harvard, 5 Juni 2008 (terjemahan bebas)'],
+['Betapa indahnya bahwa tak seorang pun perlu menunggu sesaat pun sebelum mulai memperbaiki dunia.','Anne Frank','Kehidupan','The Diary of a Young Girl, 26 Maret 1944 (terjemahan bebas)'],
+['Anak-anakmu bukanlah anak-anakmu. Mereka adalah putra dan putri dari kerinduan Kehidupan terhadap dirinya sendiri.','Kahlil Gibran','Keluarga','The Prophet (1923), “On Children” (terjemahan bebas)'],
+['Persahabatan adalah satu jiwa yang tinggal dalam dua tubuh.','Aristoteles (menurut Diogenes Laërtius)','Persahabatan','Diogenes Laërtius, Lives of Eminent Philosophers V.20 (terjemahan bebas)'],
+['Jika kamu menangis karena kehilangan matahari, air matamu akan menghalangimu melihat bintang-bintang.','Rabindranath Tagore','Ketenangan','Stray Birds (1916) (terjemahan bebas)'],
+['Pendidikan bukanlah persiapan untuk hidup; pendidikan adalah kehidupan itu sendiri.','John Dewey (ringkasan)','Pendidikan',''],
+['Pemimpin terbaik adalah yang keberadaannya nyaris tidak disadari oleh rakyatnya.','Lao Tzu','Kepemimpinan','Tao Te Ching, bab 17 (terjemahan bebas)'],
+['Dunia ini penuh penderitaan, tetapi penuh pula dengan upaya mengatasinya.','Helen Keller','Perjuangan','Optimism (1903) (terjemahan bebas)'],
+['Kehormatan milik orang yang benar-benar berada di arena, yang wajahnya berlumur debu, keringat, dan darah.','Theodore Roosevelt','Perjuangan','Pidato “Citizenship in a Republic”, Sorbonne, 23 April 1910 (terjemahan bebas)'],
+['Luka adalah tempat cahaya masuk ke dalam dirimu.','Rumi (atribusi populer)','Kebijaksanaan',''],
+['Alam tidak pernah tergesa-gesa, namun semuanya terselesaikan.','Lao Tzu (atribusi populer)','Ketenangan',''],
+['Kalimat paling berbahaya dalam bahasa adalah “Kami selalu melakukannya seperti ini.”','Grace Hopper (atribusi populer)','Teknologi',''],
+['Saya tidak gagal. Saya hanya menemukan 10.000 cara yang tidak berhasil.','Thomas Edison (atribusi populer)','Kegagalan',''],
+['Mendidik pikiran tanpa mendidik hati bukanlah pendidikan sama sekali.','Aristoteles (atribusi populer)','Pendidikan',''],
+['Dalam hidup, tidak ada yang perlu ditakuti, hanya perlu dipahami.','Marie Curie (atribusi populer)','Kehidupan','']
+);
+
 const allQ=()=>Q.concat(D.quotes.map(q=>[q.t,q.a||'Anonim',q.c||'Pribadi',q.s||'']));
-let qo=0;const qi=b=>{const[y,m,d]=ymd().split('-').map(Number),n=allQ().length;return((Math.floor(Date.UTC(y,m-1,d)/864e5)-(b||0)+qo)%n+n)%n};
+let qo=0;const gcd=(a,b)=>b?gcd(b,a%b):a,qi=b=>{const[y,m,d]=ymd().split('-').map(Number),n=allQ().length;let k=7;while(gcd(k,n)!==1)k++;return(((Math.floor(Date.UTC(y,m-1,d)/864e5)-(b||0))*k+qo)%n+n)%n};
 const qcard=(q,big)=>'<div class="pn"><span class="chip">'+esc(q[2])+'</span><p class="'+(big?'q':'')+'" style="margin:10px 0">“'+esc(q[0])+'”</p><b>— '+esc(q[1])+'</b><small>'+(q[3]?'Sumber: '+esc(q[3]):'Sumber atribusi belum terverifikasi.')+'</small></div>';
 /* ---- Router SPA ---- */
-const N=[['beranda','🏠','Beranda'],['profil','👤','Profil'],['foto','🖼','Galeri Foto'],['video','🎬','Galeri Video'],['musik','🎵','Musik'],['ajukan','📨','Ajukan Lagu'],['kutipan','💬','Kutipan Hari Ini'],['kalender','📅','Kalender'],['jam','🕒','Jam Dunia'],['statistik','📊','Statistik'],['rating','⭐','Penilaian'],['instagram','📷','Instagram'],['pengaturan','⚙️','Pengaturan']];
+const N=[['beranda','🏠','Beranda'],['profil','👤','Profil'],['foto','🖼','Galeri Foto'],['video','🎬','Galeri Video'],['musik','🎵','Musik'],['kutipan','💬','Kutipan Hari Ini'],['kalender','📅','Kalender'],['jam','🕒','Jam Dunia'],['statistik','📊','Statistik'],['rating','⭐','Penilaian'],['instagram','📷','Instagram'],['pengaturan','⚙️','Pengaturan']];
 const V={},S={};let cur='beranda';
 const hd=(t,x)=>'<div class="hd"><h2>'+t+'</h2><div class="row">'+(x||'')+'</div></div>';
 const igb='<a class="bt p" href="'+IG+'" target="_blank" rel="noopener">Buka Instagram</a>';
@@ -201,14 +256,14 @@ function go(v){if(!V[v])v='beranda';cur=v;$('#main').innerHTML=V[v]();$$('#nav b
 const C=[['foto','🖼','Galeri Foto','Koleksi foto dengan lightbox, zoom, dan kategori.'],['video','🎬','Video','Video lokal dan YouTube dalam satu tempat.'],['musik','🎵','Musik & Playlist','Putar lagu dari link YouTube, tetap jalan saat menjelajah.'],['kutipan','💬','Kutipan Hari Ini','Berganti otomatis setiap 00.00 WITA.'],['kalender','📅','Kalender','Catat agenda pada tanggal pilihanmu.'],['jam','🕒','Jam Digital','WITA, WIB, dan WIT secara real-time.'],['jam','🧭','Jam Analog','Jarum jam futuristik mengikuti WITA.'],['instagram','📷','Instagram','Ikuti @rizarz9 di Instagram.']];
 V.beranda=()=>'<section class="hero"><div class="orb"></div><div class="orb b"></div><div style="position:relative"><span class="ch">@RIZARZ9 • ONLINE</span><h1>RIZA\'S DIGITAL ROOM</h1><h2>Ruang digital untuk foto, video, musik, cerita, dan perjalanan.</h2><p>Ruang pribadi akun Instagram @rizarz9: tempat menyimpan momen, lagu favorit, dan catatan harian.</p><div class="row"><button class="bt p" data-a="go" data-v="foto">Jelajahi Galeri</button><button class="bt" data-a="pm">▶ Putar Musik</button><a class="bt" href="'+IG+'" target="_blank" rel="noopener">Instagram</a></div></div><img class="hl" src="'+LOGO+'" alt="RZ"></section><div class="grid">'+C.map(c=>'<div class="cd2"><div class="e">'+c[1]+'</div><b>'+c[2]+'</b><p>'+c[3]+'</p><button class="bt" data-a="go" data-v="'+c[0]+'">Buka</button></div>').join('')+'</div>';
 V.profil=()=>hd('Profil',isA()?'<button class="bt" data-a="ebio">✎ Edit Profil</button>':'')+'<div class="pn row" style="gap:20px"><img class="lg" style="width:96px;height:96px;padding:20px" src="'+LOGO+'" alt="RZ"><div><h3>'+esc(D.name)+'</h3><p style="color:var(--cy)">@rizarz9</p><p>'+(esc(D.bio)||'<small>Bio belum diisi. Admin dapat mengisinya.</small>')+'</p><div class="row" style="margin-top:10px">'+igb+'</div></div></div><div class="pn"><b>Konten favorit (kategori foto terbanyak)</b><p>'+(topCat()||'<small>Belum ada konten.</small>')+'</p></div>';
-const topCat=()=>{const m={};D.photos.concat(D.videos).forEach(x=>m[x.c]=(m[x.c]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,4).map(e=>'<span class="chip">'+esc(e[0])+' · '+e[1]+'</span>').join(' ')};
+const topCat=()=>{const m={};PH().concat(VDL()).forEach(x=>m[x.c]=(m[x.c]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,4).map(e=>'<span class="chip">'+esc(e[0])+' · '+e[1]+'</span>').join(' ')};
 /* Foto */
 function pgrid(){const q=(S.pq||'').toLowerCase(),c=S.pc||'';S.ls=D.photos.filter(p=>(!c||p.c===c)&&(!q||(p.cap+' '+p.c).toLowerCase().includes(q)));
  return S.ls.length?'<div class="gal">'+S.ls.map((p,i)=>'<figure class="ph" data-a="lb" data-i="'+i+'"><img loading="lazy" data-f="'+p.id+'" alt="'+esc(p.cap)+'"><figcaption>'+esc(p.cap||'Tanpa caption')+'<small>'+esc(p.c)+' • '+esc(p.d)+'</small></figcaption>'+(isA()?'<div class="ad"><button data-a="eph" data-id="'+p.id+'">✎</button><button data-a="dph" data-id="'+p.id+'">🗑</button></div>':'')+'</figure>').join('')+'</div>':'<div class="pn"><small>Belum ada foto'+(isA()?'. Klik “Unggah Foto”.':'.')+'</small></div>'}
 V.foto=()=>hd('Galeri Foto',isA()?'<button class="bt p" data-a="upf">＋ Unggah Foto</button>':'')+'<div class="row" style="margin-bottom:12px"><input class="in" style="flex:2" placeholder="Cari foto…" data-i="pq" value="'+esc(S.pq||'')+'"><select class="in" style="flex:1" data-i="pc"><option value="">Semua kategori</option>'+D.cats.map(c=>'<option '+(c===S.pc?'selected':'')+'>'+esc(c)+'</option>').join('')+'</select></div><div id="pg">'+pgrid()+'</div>';
 const catOpts=s=>D.cats.map(c=>'<option '+(c===s?'selected':'')+'>'+esc(c)+'</option>').join('');
 /* Video */
-function vgrid(L){return L.length?'<div class="vg">'+L.map(v=>'<div class="vc" data-a="vo" data-id="'+v.id+'">'+(v.y?'<img loading="lazy" src="'+thumb(v.y)+'" alt="">':'<div class="th0">🎞</div>')+'<div class="vi"><b>'+esc(v.t)+'</b><small>'+esc(v.c)+' • '+esc(v.d)+'</small><small>'+esc(v.ds)+'</small></div>'+(isA()?'<div class="ad"><button data-a="evd" data-id="'+v.id+'">✎</button><button data-a="dvd" data-id="'+v.id+'">🗑</button></div>':'')+'</div>').join('')+'</div>':'<div class="pn"><small>Belum ada video.</small></div>'}
+function vgrid(L){return L.length?'<div class="vg">'+L.map(v=>'<div class="vc" data-a="vo" data-id="'+v.id+'">'+(v.y?'<img loading="lazy" src="'+thumb(v.y)+'" alt="">':'<div class="th0">🎞</div>')+'<div class="vi"><b>'+esc(v.t)+'</b><small>'+esc(v.c)+' • '+esc(v.d)+'</small><small>'+esc(v.ds)+'</small></div>'+(isA()&&(!v.g||sbAdm())?'<div class="ad"><button data-a="evd" data-id="'+v.id+'">✎</button><button data-a="dvd" data-id="'+v.id+'">🗑</button></div>':'')+'</div>').join('')+'</div>':'<div class="pn"><small>Belum ada video.</small></div>'}
 V.video=()=>hd('Galeri Video',isA()?'<button class="bt p" data-a="upv">＋ Tambah Video</button>':'')+vgrid(D.videos);
 /* Musik */
 V.musik=()=>hd('Musik & Playlist','<button class="bt p" data-a="adds">＋ Tambahkan Lagu YouTube</button><button class="bt" data-a="pm">▶ Putar</button>')+'<div class="pn"><small>Pemutar tetap aktif saat kamu berpindah menu. Lagu dari pengunjung hanya berlaku di sesi ini; lagu admin tersimpan permanen di perangkat admin.</small></div><div class="pn" id="mpl">'+rows()+'</div>';
@@ -223,16 +278,16 @@ V.kalender=()=>{const t=ymd();if(!S.cy){S.cy=+t.slice(0,4);S.cm=+t.slice(5,7)}co
 const hrs=Array.from({length:12},(_,i)=>{const a=i*30*Math.PI/180;return'<line x1="'+(100+82*Math.sin(a))+'" y1="'+(100-82*Math.cos(a))+'" x2="'+(100+92*Math.sin(a))+'" y2="'+(100-92*Math.cos(a))+'" stroke="#22d3ee" stroke-width="'+(i%3?2:4)+'"/>'}).join('');
 V.jam=()=>hd('Jam Dunia Indonesia')+'<div class="zs"><div class="zc m"><div>WITA — UTC+8 • Asia/Makassar</div><div class="clk" data-z="WITA"></div><div>'+df('Asia/Makassar')+'</div></div>'+['WIB','WIT'].map(k=>'<div class="zc"><b>'+k+' — UTC+'+Z[k][1]+'</b><div class="clk" data-z="'+k+'"></div><small>'+(Z[k][1]-8>0?'+':'')+(Z[k][1]-8)+' jam dari WITA</small></div>').join('')+'</div><div class="pn" style="text-align:center;margin-top:14px"><b>Jam Analog (WITA)</b><svg viewBox="0 0 200 200" style="width:min(300px,80%);display:block;margin:10px auto;filter:drop-shadow(0 0 12px #22d3ee88)"><circle cx="100" cy="100" r="96" fill="#14123a" stroke="#7c4dff" stroke-width="3"/>'+hrs+'<line id="ahh" x1="100" y1="100" x2="100" y2="55" stroke="#fff" stroke-width="5" stroke-linecap="round"/><line id="ahm" x1="100" y1="100" x2="100" y2="35" stroke="#a9a6d6" stroke-width="3" stroke-linecap="round"/><line id="ahs" x1="100" y1="112" x2="100" y2="25" stroke="#ff5fa2" stroke-width="1.5"/><circle cx="100" cy="100" r="5" fill="#ff5fa2"/></svg></div>';
 /* Statistik (hanya data perangkat ini) */
-V.statistik=()=>{const st=[['Foto',PH().length],['Video',D.videos.length],['Lagu',D.songs.length+GP.length],['Kutipan',Q.length+D.quotes.length],['Catatan',Object.values(D.notes).flat().length]],mx=Math.max(1,...st.map(s=>s[1]));
+V.statistik=()=>{const st=[['Foto',PH().length],['Video',VDL().length],['Lagu',D.songs.length+GP.length],['Kutipan',Q.length+D.quotes.length],['Catatan',Object.values(D.notes).flat().length]],mx=Math.max(1,...st.map(s=>s[1]));
  setTimeout(()=>{if(navigator.storage&&navigator.storage.estimate)navigator.storage.estimate().then(e=>{const el=$('#stg');if(el)el.textContent='Penyimpanan: '+(e.usage/1048576).toFixed(1)+' MB dari ±'+(e.quota/1048576|0)+' MB'}).catch(()=>{})});
- return hd('Statistik','<span class="chip">Statistik perangkat ini</span>')+'<div class="pn"><div class="bars">'+st.map(s=>'<div><b>'+s[1]+'</b><i style="height:'+s[1]/mx*80+'%"></i><small>'+s[0]+'</small></div>').join('')+'</div></div><div class="pn"><b>Total konten: '+(PH().length+D.videos.length+D.songs.length+GP.length)+'</b> • Kunjungan sesi di perangkat ini: '+D.visits+'<small id="stg"></small></div><div class="pn"><b>Aktivitas terbaru</b>'+(D.log.map(l=>'<small>'+esc(l.t)+' — '+esc(l.m)+'</small>').join('')||'<small>Belum ada aktivitas.</small>')+'</div>'};
+ return hd('Statistik','<span class="chip">Statistik perangkat ini</span>')+'<div class="pn"><div class="bars">'+st.map(s=>'<div><b>'+s[1]+'</b><i style="height:'+s[1]/mx*80+'%"></i><small>'+s[0]+'</small></div>').join('')+'</div></div><div class="pn"><b>Total konten: '+(PH().length+VDL().length+D.songs.length+GP.length)+'</b> • Kunjungan sesi di perangkat ini: '+D.visits+'<small id="stg"></small></div><div class="pn"><b>Aktivitas terbaru</b>'+(D.log.map(l=>'<small>'+esc(l.t)+' — '+esc(l.m)+'</small>').join('')||'<small>Belum ada aktivitas.</small>')+'</div>'};
 V.instagram=()=>hd('Instagram')+'<div class="pn" style="text-align:center"><img class="lg" style="width:90px;height:90px;padding:18px" src="'+LOGO+'" alt="RZ"><h3>@rizarz9</h3><div class="row" style="justify-content:center;margin-top:12px">'+igb+'<a class="bt" href="'+IG+'" target="_blank" rel="noopener">Lihat Profil</a><a class="bt" href="'+IG+'" target="_blank" rel="noopener">Ikuti Instagram</a></div></div>';
 V.pengaturan=()=>{const s=D.set;return hd('Pengaturan')+'<div class="pn"><label class="row"><input type="checkbox" data-s="light" '+(s.light?'checked':'')+'> Mode terang</label><label class="row"><input type="checkbox" data-s="anim" '+(s.anim?'checked':'')+'> Animasi aktif</label><label class="row"><input type="checkbox" data-s="auto" '+(s.auto?'checked':'')+'> Musik otomatis (mulai setelah sentuhan pertama)</label><p>Volume default: <input type="range" min="0" max="100" value="'+s.vol+'" data-s="vol"></p><p>Ukuran tampilan: <input type="range" min="14" max="20" value="'+s.fs+'" data-s="fs"></p></div><div class="pn row"><button class="bt" data-a="exp">⬇ Backup data</button><label class="bt">⬆ Restore data<input type="file" accept=".json" id="imp" hidden></label><button class="bt d" data-a="rst">Reset pengaturan</button></div><small>Backup hanya memuat data teks/metadata (playlist, caption, kutipan, catatan). File foto/video ada di IndexedDB perangkat ini dan tidak ikut diekspor.</small>'};
 V.cari=()=>hd('Pencarian')+'<input class="in" id="gq" placeholder="Cari foto, video, lagu, kutipan, kategori…" data-i="gq"><div id="gr"></div>';
 function gres(q){q=q.toLowerCase().trim();const r=$('#gr');if(!q){r.innerHTML='';return}const h=(a,b)=>(a+' '+b).toLowerCase().includes(q);
- const P2=PH().filter(p=>h(p.cap,p.c)),V2=D.videos.filter(v=>h(v.t+' '+v.ds,v.c)),S2=LS().filter(s=>h(s.t,s.a)),Q2=allQ().filter(x=>h(x[0]+' '+x[1],x[2]));
+ const P2=PH().filter(p=>h(p.cap,p.c)),V2=VDL().filter(v=>h(v.t+' '+v.ds,v.c)),S2=LS().filter(s=>h(s.t,s.a)),Q2=allQ().filter(x=>h(x[0]+' '+x[1],x[2]));
  r.innerHTML=(P2.length?'<h3>Foto</h3><div class="gal">'+P2.map(p=>'<figure class="ph"><img '+pimg(p)+' alt=""><figcaption>'+esc(p.cap)+'<small>'+esc(p.c)+'</small></figcaption></figure>').join('')+'</div>':'')+(V2.length?'<h3>Video</h3>'+vgrid(V2):'')+(S2.length?'<h3>Lagu</h3>'+S2.map(s=>'<div class="ln" data-a="psel" data-i="'+LS().indexOf(s)+'"><img src="'+thumb(s.v)+'" alt=""><div><b>'+esc(s.t)+'</b><small>'+esc(s.a)+'</small></div></div>').join(''):'')+(Q2.length?'<h3>Kutipan</h3>'+Q2.map(x=>qcard(x)).join(''):'')||'<div class="pn"><small>Tidak ada hasil.</small></div>';media()}
-V.admin=()=>!isA()?V.beranda():hd('Dashboard Admin','<button class="bt d" data-a="out">Logout</button>')+'<div class="grid">'+[['upf','🖼','Upload Foto'],['upv','🎬','Upload / Tambah Video'],['adds','🎵','Tambahkan Lagu YouTube'],['go-musik','📜','Kelola Playlist'],['go-foto','✎','Kelola Galeri (edit/hapus)'],['qm','💬','Kelola Kutipan'],['catm','🏷','Kelola Kategori'],['ebio','👤','Kelola Profil']].map(a=>'<button class="cd2" style="color:#fff;text-align:left" data-a="'+(a[0].startsWith('go-')?'go':a[0])+'" data-v="'+a[0].slice(3)+'"><div class="e">'+a[1]+'</div><b>'+a[2]+'</b></button>').join('')+'</div><small>Admin hanya pembatas tampilan, bukan keamanan server.</small>';
+V.admin=()=>!isA()?V.beranda():hd('Dashboard Admin','<button class="bt d" data-a="out">Logout</button>')+'<div class="grid">'+[['upf','🖼','Upload Foto'],['upv','🎬','Upload / Tambah Video'],['adds','🎵','Tambahkan Lagu YouTube'],['qreset','🔄','Reset Kuota Lagu Mingguan'],['go-musik','📜','Kelola Playlist'],['go-foto','✎','Kelola Galeri (edit/hapus)'],['qm','💬','Kelola Kutipan'],['catm','🏷','Kelola Kategori'],['ebio','👤','Kelola Profil']].map(a=>'<button class="cd2" style="color:#fff;text-align:left" data-a="'+(a[0].startsWith('go-')?'go':a[0])+'" data-v="'+a[0].slice(3)+'"><div class="e">'+a[1]+'</div><b>'+a[2]+'</b></button>').join('')+'</div><small>Admin hanya pembatas tampilan, bukan keamanan server.</small>';
 /* ---- Aksi (event delegation) ---- */
 const A={
 go:(d)=>go(d.v),menu:()=>$('#sb').classList.toggle('open'),col:()=>$('#sb').classList.toggle('mini'),cl:(d,b)=>b.closest('.mo').remove(),
@@ -309,7 +364,13 @@ function abtn(){$('#ab').textContent=isA()?'👤 Admin ✓':'👤 Login Admin'}
  * anon key memang boleh publik (dilindungi RLS). JANGAN PERNAH menaruh service_role key di file ini.
  * Selama SB.url / SB.key kosong, fitur global (foto, playlist permanen, pengajuan lagu, rating) dinonaktifkan dan
  * ditandai jelas di UI — tidak ada klaim palsu bahwa data tersimpan global. */
-const SB={url:'',key:''};
+const CFG=Object.assign({},window.RIZA_INLINE||{},Object.fromEntries(Object.entries(window.RIZA_CONFIG||{}).filter(e=>e[1])));let SBERR='';
+const SB=(()=>{const u=String(CFG.SUPABASE_URL||'').trim().replace(/\/+$/,''),k=String(CFG.SUPABASE_ANON_KEY||'').trim(),no={url:'',key:''};if(!u&&!k){SBERR=(window.RIZA_CONFIG?'config.js terbaca tetapi URL/kunci masih kosong':'config.js tidak terbaca (belum diunggah, atau namanya beda misalnya "config (1).js")')+', dan bagian KONFIGURASI SUPABASE di dalam index.html juga masih kosong';return no}
+ if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(u)){SBERR='SUPABASE_URL tidak valid (contoh: https://abcd1234.supabase.co)';return no}
+ if(!k){SBERR='SUPABASE_ANON_KEY kosong';return no}
+ if(/^sb_secret_/.test(k)){SBERR='DITOLAK: itu secret key (rahasia). Pakai anon/public key saja.';return no}
+ try{const p=JSON.parse(atob(k.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));if(p.role==='service_role'){SBERR='DITOLAK: itu service_role key (rahasia). Pakai anon/public key saja.';return no}}catch(e){}
+ return{url:u,key:k}})();
 const SBOK=()=>!!(SB.url&&SB.key);
 let SBT=sessionStorage.getItem('sbt')||'',SBR=sessionStorage.getItem('sbr')||'';
 const sbAdm=()=>SBOK()&&!!SBT&&isA();
@@ -326,7 +387,7 @@ const sv=x=>/^[\w-]{10,64}$/.test(x||'')?x:'';
 const wt=i=>new Date(i).toLocaleString('id-ID',{timeZone:'Asia/Makassar'})+' WITA';
 const hms=ms=>{const s=Math.floor(ms/1000);return String(Math.floor(s/3600)).padStart(2,'0')+':'+String(Math.floor(s%3600/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
 const igc=v=>{v=String(v||'').trim().replace(/\/+$/,'').split('/').pop().replace(/^@/,'').split('?')[0];return/^[\w.]{1,30}$/.test(v)?v:''};
-const dbNote=()=>SBOK()?'':'<div class="pn"><small>Database global belum dikonfigurasi (SB.url/SB.key kosong). Fitur ini belum aktif.</small></div>';
+const dbNote=()=>SBOK()?'':'<div class="pn"><small>Database global belum aktif. '+(SBERR?'Penyebab: '+esc(SBERR):'Isi config.js dengan Project URL dan anon key Supabase.')+'</small></div>';
 
 /* ---- FOTO GLOBAL ---- */
 let GPH=[];const PH=()=>GPH.concat(D.photos);
@@ -354,35 +415,15 @@ A.dph=async d=>{const p=PH().find(x=>x.id===d.id);if(!p||!confirm('Hapus foto in
 const v_foto=V.foto;V.foto=()=>{if(SBOK())ldPh();return v_foto()};
 
 /* ---- PLAYLIST PERMANEN (GLOBAL) + PENGAJUAN LAGU ---- */
-let GP=[],RQ=[],pn=0;
+let GP=[];
 async function ldPl(){if(!SBOK())return;try{const r=await sb('/rest/v1/playlist?select=*&order=created_at.asc');const k=x=>x&&(x.id||x.v),ck=k(LS()[pi]);GP=r.map(x=>({id:x.id,v:sv(x.video_id)||plSeed(x.list_id||''),pl:sv(x.list_id)||undefined,t:x.title||'Lagu',a:x.author||'YouTube',g:1}));pi=ck?LS().findIndex(x=>k(x)===ck):-1;ui()}catch(e){console.warn('playlist',e.message)}}
 async function sbAddPl(s){try{let t=s.t,a='YouTube';if(s.v&&!s.pl){const m=await ytmeta(s.v);if(m.t){t=m.t;a=m.a||a}}await sb('/rest/v1/playlist',{m:'POST',j:{video_id:s.v||null,list_id:s.pl||null,title:t,author:a,added_by:'admin'},h:{Prefer:'return=minimal'}});await ldPl()}catch(e){toast('Gagal menyimpan ke database: '+e.message,'err')}}
 rows=function(){const l=LS();if(!l.length)return'<small>Belum ada lagu. Tambahkan link YouTube dengan tombol ＋.</small>';const a=DEF.length,b=a+GP.length,c=b+D.songs.length,rm=i=>'<button data-a="prm" data-i="'+i+'" aria-label="Hapus">✕</button>';
- return l.map((s,i)=>'<div class="ln '+(i===pi?'on':'')+'" data-a="psel" data-i="'+i+'"><img src="'+thumb(s.v)+'" alt="" loading="lazy"><div><b>'+esc(s.t)+'</b><small>'+esc(s.a)+(i<a?' • bawaan':i<b?' • playlist permanen':i<c?' • lokal':' • sesi ini')+'</small></div>'+(i<a?'':i<b?(sbAdm()?rm(i):''):i<c?(isA()?rm(i):''):rm(i))+'</div>').join('')};
+ return l.map((s,i)=>'<div class="ln '+(i===pi?'on':'')+'" data-a="psel" data-i="'+i+'"><img src="'+thumb(s.v)+'" alt="" loading="lazy"><div><b>'+esc(s.t)+'</b><small>'+esc(s.a)+(i<a?' • bawaan':i<b?' • playlist bersama':i<c?' • lokal':' • sesi ini')+'</small></div>'+(i<a?'':i<b?(sbAdm()?rm(i):''):i<c?(isA()?rm(i):''):rm(i))+'</div>').join('')};
 A.prm=async d=>{const i=+d.i,a=DEF.length,b=a+GP.length,c=b+D.songs.length;if(i<a)return toast('Playlist bawaan tidak dapat dihapus','err');
  if(i<b){const g=GP[i-a];if(!sbAdm())return toast('Masuk database admin dahulu','err');try{await sb('/rest/v1/playlist?id=eq.'+encodeURIComponent(g.id),{m:'DELETE'});GP.splice(i-a,1);slog('Hapus dari playlist permanen: '+g.t)}catch(e){return toast('Gagal: '+e.message,'err')}}
  else if(i<c){D.songs.splice(i-b,1);save()}else SS.splice(i-c,1);
  if(i===pi){pi=-1;playing=0;if(rdy)P.stopVideo()}else if(i<pi)pi--;toast('Lagu dihapus');ui()};
-const o_adds=A.adds;A.adds=()=>{if(isA())return o_adds();dlg('Tambahkan Lagu YouTube','<input class="in" id="yu" placeholder="https://youtu.be/… atau https://www.youtube.com/watch?v=…"><small>Pilih: putar sementara di perangkatmu, atau ajukan agar masuk playlist permanen (menunggu keputusan admin maks. 48 jam).</small><div class="row" style="margin-top:8px"><button class="bt" data-a="addsg">▶ Putar Saja</button><button class="bt p" data-a="reqf">📨 Ajukan ke Playlist</button></div>')};
-A.reqf=async(d,b)=>{const u=$('#yu').value,v=ytid(u),l=v?null:ytlist(u);if(!v&&!l)return toast('Link YouTube tidak valid','err');const m=b.closest('.md');
- if(!SBOK()){m.insertAdjacentHTML('beforeend','<div class="pn" style="margin-top:10px"><small>Pengajuan belum aktif: database belum dikonfigurasi. Kamu tetap bisa memakai “Putar Saja”.</small></div>');return}
- S.rq={v,l};m.innerHTML='<button class="x" data-a="cl">✕</button><h3>Ajukan ke Playlist</h3><img src="'+thumb(v||plSeed(l))+'" alt="" style="width:100%;max-width:240px;border-radius:12px"><input class="in" id="rt" placeholder="Judul lagu (otomatis jika tersedia)" maxlength="150"><input class="in" id="rn" placeholder="Nama pengaju *" maxlength="60"><input class="in" id="ri" placeholder="Username Instagram (opsional)" maxlength="40"><textarea class="in" id="rm" placeholder="Pesan / alasan rekomendasi (opsional)" maxlength="300"></textarea><small>Keputusan admin paling lambat 48 jam sejak pengajuan.</small><button class="bt p" data-a="reqs" style="margin-top:8px">Kirim Pengajuan</button>';
- if(v)ytmeta(v).then(x=>{const t=$('#rt');if(t&&!t.value&&x.t)t.value=x.t})};
-A.reqs=async(d,b)=>{const n=$('#rn').value.trim();if(n.length<2)return toast('Nama pengaju wajib diisi','err');if(Date.now()-(+localStorage.getItem('rzq')||0)<30000)return toast('Tunggu sebentar sebelum mengirim lagi','err');b.disabled=1;
- try{await sb('/rest/v1/song_requests',{m:'POST',j:{video_id:S.rq.v||null,list_id:S.rq.l||null,title:$('#rt').value.trim()||'Lagu YouTube',name:n,ig:igc($('#ri').value)||null,message:$('#rm').value.trim()||null},h:{Prefer:'return=minimal'}});localStorage.setItem('rzq',Date.now());toast('Pengajuan terkirim. Admin memutuskan dalam 48 jam.');b.closest('.mo').remove()}catch(e){b.disabled=0;toast('Gagal mengirim: '+e.message,'err')}};
-const SL={pending:'Menunggu',approved:'Disetujui',rejected:'Ditolak',expired:'Kedaluwarsa'};
-async function ldRq(q){if(!sbAdm())return;try{const r=await sb('/rest/v1/song_requests?select=*&order=created_at.desc&limit=200'),now=Date.now();
- if(r.some(x=>x.status==='pending'&&new Date(x.expires_at)<now)){await sb('/rest/v1/song_requests?status=eq.pending&expires_at=lt.'+encodeURIComponent(new Date().toISOString()),{m:'PATCH',j:{status:'expired'},h:{Prefer:'return=minimal'}});r.forEach(x=>{if(x.status==='pending'&&new Date(x.expires_at)<now)x.status='expired'})}
- const np=r.filter(x=>x.status==='pending').length;if(q&&np>pn)toast('📨 '+np+' permintaan lagu menunggu keputusan');pn=np;RQ=r;S.rqe=''}catch(e){S.rqe=e.message}abtn();if(cur==='areq'||cur==='admin')rr()}
-function rcard(r){const st=r.status,vi=sv(r.video_id),li=sv(r.list_id),lk=vi?'https://www.youtube.com/watch?v='+vi:'https://www.youtube.com/playlist?list='+li,op=st==='pending'||st==='expired';
- return'<div class="pn rq"><img src="'+thumb(vi||plSeed(li))+'" alt=""><div style="flex:1;min-width:0"><b>'+esc(r.title||'Tanpa judul')+'</b><small><a href="'+lk+'" target="_blank" rel="noopener" style="color:var(--cy)">Buka link video</a> • oleh '+esc(r.name)+(r.ig?' • @'+esc(r.ig):'')+'</small><small>Masuk: '+wt(r.created_at)+'</small>'+(r.message?'<small>“'+esc(r.message)+'”</small>':'')+'<span class="chip st-'+st+'">'+SL[st]+'</span> '+(op?'<span class="clk" data-exp="'+esc(r.expires_at)+'"></span>':'')+(r.decided_at?'<small>Diputuskan: '+wt(r.decided_at)+'</small>':'')+'</div>'+(op?'<div class="col"><button class="bt p" data-a="rqok" data-id="'+r.id+'">IZINKAN</button><button class="bt d" data-a="rqno" data-id="'+r.id+'">TOLAK</button></div>':'')+'</div>'}
-V.areq=()=>{if(!isA())return V.beranda();if(!sbAdm())return hd('Permintaan Lagu')+'<div class="pn"><small>'+(SBOK()?'Masuk database admin untuk melihat permintaan.':'Database belum dikonfigurasi.')+'</small></div>'+(SBOK()?'<button class="bt p" data-a="dbl">Masuk Database</button>':'');
- if(!S.rqx){S.rqx=1;ldRq().finally(()=>S.rqx=0)}const op=RQ.filter(x=>x.status==='pending'||x.status==='expired'),hi=RQ.filter(x=>x.status==='approved'||x.status==='rejected');
- return hd('Permintaan Lagu','<button class="bt" data-a="go" data-v="admin">‹ Dashboard</button>')+(S.rqe?'<div class="pn"><small>⚠ '+esc(S.rqe)+'</small></div>':'')+'<h3>Menunggu ('+op.length+')</h3>'+(op.map(rcard).join('')||'<div class="pn"><small>Tidak ada permintaan.</small></div>')+'<h3>Riwayat</h3>'+(hi.map(rcard).join('')||'<div class="pn"><small>Belum ada riwayat.</small></div>')};
-A.rqok=async d=>{const r=RQ.find(x=>x.id===d.id);if(!r)return;if(r.status==='expired'&&!confirm('Permintaan ini sudah lewat 48 jam. Tetap izinkan?'))return;
- try{await sb('/rest/v1/playlist',{m:'POST',j:{video_id:sv(r.video_id)||null,list_id:sv(r.list_id)||null,title:r.title||'Lagu YouTube',author:'YouTube',added_by:'request:'+r.name},h:{Prefer:'return=minimal'}});await sb('/rest/v1/song_requests?id=eq.'+encodeURIComponent(r.id),{m:'PATCH',j:{status:'approved',decided_at:new Date().toISOString()},h:{Prefer:'return=minimal'}});slog('Setujui lagu: '+r.title);toast('Lagu masuk playlist permanen');await ldPl();await ldRq()}catch(e){toast('Gagal: '+e.message,'err')}};
-A.rqno=async d=>{const r=RQ.find(x=>x.id===d.id);if(!r)return;try{await sb('/rest/v1/song_requests?id=eq.'+encodeURIComponent(r.id),{m:'PATCH',j:{status:'rejected',decided_at:new Date().toISOString()},h:{Prefer:'return=minimal'}});slog('Tolak lagu: '+r.title);toast('Permintaan ditolak');await ldRq()}catch(e){toast('Gagal: '+e.message,'err')}};
-
 /* ---- RATING 1–5 (identitas hanya admin; publik hanya agregat via view ratings_public) ---- */
 let RT=[],AR=[];const SLB=['Sangat Kurang','Kurang','Cukup','Bagus','Sangat Bagus'],stars=n=>'★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n));
 async function ldRt(){if(!SBOK())return;try{RT=await sb('/rest/v1/ratings_public?select=stars,comment,created_at&order=created_at.desc&limit=1000');S.rte=''}catch(e){S.rte=e.message}S.rtl=1;if(cur==='rating'&&$('#rst')){$('#rst').innerHTML=rstat();$('#rcm').innerHTML=rcom()}}
@@ -408,12 +449,12 @@ V.alog=()=>{if(!isA())return V.beranda();if(sbAdm()&&!S.lgx){S.lgx=1;sb('/rest/v
 
 /* ---- LOGIN DATABASE ADMIN & DASHBOARD ---- */
 A.dbl=()=>SBOK()?dlg('Masuk Database Admin','<small>Akun Supabase Auth milik admin. Diperlukan agar upload, persetujuan, dan data rating tersimpan global.</small><input class="in" id="dbe" type="email" placeholder="Email admin" autocomplete="username"><input class="in" id="dbp" type="password" placeholder="Password" autocomplete="current-password"><button class="bt p" data-a="dbls" style="margin-top:8px">Masuk</button>'):toast('Database belum dikonfigurasi (isi SB.url dan SB.key)','err');
-A.dbls=async(d,b)=>{b.disabled=1;try{await sbLogin($('#dbe').value.trim(),$('#dbp').value);$$('.mo').forEach(m=>m.remove());toast('Masuk database berhasil');abtn();ldPh();ldPl();ldRq(1);rr()}catch(e){b.disabled=0;toast(e.message,'err')}};
+A.dbls=async(d,b)=>{b.disabled=1;try{await sbLogin($('#dbe').value.trim(),$('#dbp').value);$$('.mo').forEach(m=>m.remove());toast('Masuk database berhasil');abtn();ldPh();ldPl();rr()}catch(e){b.disabled=0;toast(e.message,'err')}};
 const o_login=A.login;A.login=()=>{o_login();if(isA()&&SBOK()&&!SBT)setTimeout(A.dbl,350)};
-const o_out=A.out;A.out=()=>{sbOut();RQ=[];AR=[];o_out()};
-abtn=function(){const n=RQ.filter(x=>x.status==='pending').length;document.title=(isA()&&n?'('+n+') ':'')+"RIZA'S DIGITAL ROOM";$('#ab').innerHTML=(isA()?'👤 Admin ✓':'👤 Login Admin')+(isA()&&n?'<span class="bdg" title="Permintaan lagu menunggu">'+n+'</span>':'')};
-V.admin=()=>{if(!isA())return V.beranda();const n=RQ.filter(x=>x.status==='pending').length,it=[['upf','🖼','Upload Foto Global'],['go-foto','🗄','Database Foto'],['go-areq','📨','Permintaan Lagu'+(n?'<span class="bdg">'+n+'</span>':'')],['go-musik','📜','Playlist Permanen'],['go-arat','⭐','Penilaian Pengunjung'],['xl','📥','Ekspor Excel'],['go-arat','🛡','Moderasi Komentar'],['go-statistik','📊','Statistik'],['go-alog','🧾','Riwayat Aktivitas'],['upv','🎬','Upload / Tambah Video'],['adds','🎵','Tambahkan Lagu YouTube'],['qm','💬','Kelola Kutipan'],['catm','🏷','Kelola Kategori'],['ebio','👤','Kelola Profil']];
- return hd('Dashboard Admin','<button class="bt d" data-a="out">Logout</button>')+(n?'<div class="pn" style="border-color:var(--pk)"><b>📨 '+n+' permintaan lagu baru menunggu keputusan</b> <button class="bt p" style="padding:6px 12px" data-a="go" data-v="areq">Lihat</button></div>':'')+'<div class="pn"><b>Status database:</b> '+(!SBOK()?'belum dikonfigurasi — fitur global nonaktif':sbAdm()?'🟢 terhubung & login admin':'🟡 terkonfigurasi, belum masuk database')+(SBOK()&&!sbAdm()?' <button class="bt p" style="padding:6px 12px" data-a="dbl">Masuk Database</button>':'')+'</div><div class="grid">'+it.map(a=>'<button class="cd2" style="color:#fff;text-align:left" data-a="'+(a[0].startsWith('go-')?'go':a[0])+'" data-v="'+a[0].slice(3)+'"><div class="e">'+a[1]+'</div><b>'+a[2]+'</b></button>').join('')+'</div><small>Kode admin di HTML hanya pembatas tampilan; keamanan data global dijaga oleh Supabase Auth + RLS.</small>'};
+const o_out=A.out;A.out=()=>{sbOut();AR=[];o_out()};
+abtn=function(){$('#ab').innerHTML=isA()?'👤 Admin ✓':'👤 Login Admin'};
+V.admin=()=>{if(!isA())return V.beranda();const it=[['upf','🖼','Upload Foto Global'],['go-foto','🗄','Database Foto'],['go-musik','📜','Playlist Permanen'],['go-arat','⭐','Penilaian Pengunjung'],['xl','📥','Ekspor Excel'],['go-arat','🛡','Moderasi Komentar'],['go-statistik','📊','Statistik'],['go-alog','🧾','Riwayat Aktivitas'],['upv','🎬','Upload / Tambah Video'],['adds','🎵','Tambahkan Lagu YouTube'],['qreset','🔄','Reset Kuota Lagu Mingguan'],['qm','💬','Kelola Kutipan'],['catm','🏷','Kelola Kategori'],['ebio','👤','Kelola Profil']];
+ return hd('Dashboard Admin','<button class="bt d" data-a="out">Logout</button>')+'<div class="pn"><b>Status database:</b> '+(!SBOK()?(SBERR?'⚠ '+esc(SBERR):'belum dikonfigurasi (isi config.js) — fitur global nonaktif'):sbAdm()?'🟢 terhubung & login admin':'🟡 terkonfigurasi, belum masuk database')+(SBOK()&&!sbAdm()?' <button class="bt p" style="padding:6px 12px" data-a="dbl">Masuk Database</button>':'')+(SBOK()?' <button class="bt" style="padding:6px 12px" data-a="dbt">Uji Koneksi</button><small>'+esc(S.dbs||'')+'</small>':'')+(SBOK()?'<br><small>Kuota lagu minggu ini: '+(QS?QS.used+' / '+QS.limit+(QS.remaining<=0?' (ditutup)':''):'memuat…')+'</small>':'')+'</div><div class="grid">'+it.map(a=>'<button class="cd2" style="color:#fff;text-align:left" data-a="'+(a[0].startsWith('go-')?'go':a[0])+'" data-v="'+a[0].slice(3)+'"><div class="e">'+a[1]+'</div><b>'+a[2]+'</b></button>').join('')+'</div><small>Kode admin di HTML hanya pembatas tampilan; keamanan data global dijaga oleh Supabase Auth + RLS.</small>'};
 
 /* ---- CUACA BANJARMASIN (Open-Meteo) ---- */
 let W=null,WE='';
@@ -463,34 +504,83 @@ A.fbx=()=>{localStorage.setItem('rzfb',ymd());const e=$('#fb');if(e)e.remove()};
 const v_ber=V.beranda;V.beranda=()=>fbHTML()+v_ber()+'<div class="pn" id="wxc" style="margin-top:14px">'+wxH()+'</div>';
 C.push(['rating','⭐','Penilaian','Beri bintang 1–5 untuk website ini.']);
 function tk2(){const z=PT[ymd()],f=$('#fbc');if(f&&z){const m=new Date(ymd()+'T'+z+':00+08:00')-Date.now();f.textContent=m>0?'Menuju waktu Zuhur: '+hms(m):'Waktu Zuhur telah tiba'}
- $$('[data-exp]').forEach(e=>{const m=new Date(e.dataset.exp)-Date.now();e.textContent=m>0?'⏳ Sisa '+hms(m):'Kedaluwarsa (lewat 48 jam)'})}
-
-/* ---- VISUALIZER ----
- * Audio YouTube berada di iframe lintas-origin: browser TIDAK mengizinkan Web Audio API membacanya.
- * Karena itu mode bawaan hanyalah animasi ambient (dekoratif, tidak mengikuti nada). Spektrum NYATA tersedia
- * lewat mikrofon (AnalyserNode) yang menangkap suara dari speaker perangkat. */
-const vc=$('#vzc'),vx=vc.getContext('2d');let AC,AN,VD,VW,MS=null;
-function vzLoop(){requestAnimationFrame(vzLoop);const ex=$('#pl').classList.contains('ex'),mic=!!(MS&&AN);if(document.hidden||(!ex&&!mic))return;
- if(mic){AN.getByteFrequencyData(VD);AN.getByteTimeDomainData(VW)}
- if(ex){const dp=window.devicePixelRatio||1,w=vc.clientWidth*dp,h=vc.clientHeight*dp;if(vc.width!==w||vc.height!==h){vc.width=w;vc.height=h}vx.clearRect(0,0,w,h);const n=40,bw=w/n,g=vx.createLinearGradient(0,h,0,0);g.addColorStop(0,'#7c4dff');g.addColorStop(.6,'#22d3ee');g.addColorStop(1,'#ff5fa2');vx.fillStyle=g;vx.shadowColor='#22d3ee';vx.shadowBlur=12*dp;
-  for(let i=0;i<n;i++){const v=mic?VD[Math.floor(Math.pow(i/n,1.6)*(VD.length-4))+1]/255:(playing?.14+.1*Math.sin(Date.now()/380+i*.7):.04),bh=Math.max(2*dp,v*h*.95);vx.fillRect(i*bw+bw*.15,h-bh,bw*.7,bh)}
-  if(mic){vx.shadowBlur=0;vx.strokeStyle='#ff5fa2';vx.lineWidth=2*dp;vx.beginPath();for(let i=0;i<VW.length;i++){const x=i/VW.length*w,y=VW[i]/255*h;i?vx.lineTo(x,y):vx.moveTo(x,y)}vx.stroke()}}
- if(mic)$$('.vz i').forEach((e,i)=>{e.style.animation='none';e.style.height=Math.max(3,VD[2+i*3]/255*22)+'px'})}
-A.vmic=async()=>{const t=$('#vmt'),b=$('#vmb');if(MS){MS.getTracks().forEach(x=>x.stop());MS=null;$$('.vz i').forEach(e=>{e.style.animation='';e.style.height=''});b.textContent='🎙 Spektrum nyata via mikrofon';t.textContent='Mode ambient (dekoratif): audio YouTube tidak dapat dibaca browser (pembatasan lintas-origin), jadi gerakan ini tidak mengikuti nada lagu.';return}
- try{MS=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});AC=AC||new(window.AudioContext||window.webkitAudioContext)();await AC.resume();AN=AC.createAnalyser();AN.fftSize=256;AN.smoothingTimeConstant=.8;AC.createMediaStreamSource(MS).connect(AN);VD=new Uint8Array(AN.frequencyBinCount);VW=new Uint8Array(AN.fftSize);b.textContent='⏹ Matikan mikrofon';t.textContent='Spektrum nyata dari suara yang ditangkap mikrofon (butuh https dan izin mikrofon).'}catch(e){MS=null;toast('Mikrofon tidak tersedia / izin ditolak','err')}};
+ }
 
 A.wxr=()=>{toast('Memperbarui cuaca…');ldWx()};
 const v_jam=V.jam;V.jam=()=>v_jam()+'<div class="pn" id="wxc" style="margin-top:14px">'+wxH()+'</div>';
-/* ---- PENGAJUAN LAGU: halaman publik + tombol di Musik ---- */
-const v_mus=V.musik;V.musik=()=>v_mus().replace('<button class="bt p" data-a="adds">','<button class="bt p" data-a="go" data-v="ajukan">📨 Ajukan Lagu ke Playlist</button><button class="bt" data-a="adds">')+'<div class="pn"><b>Ingin lagumu masuk playlist permanen?</b><small>Ajukan link YouTube, lalu admin memutuskan dalam 48 jam.</small><button class="bt p" data-a="go" data-v="ajukan" style="margin-top:8px">📨 Ajukan Lagu</button></div>';
-V.ajukan=()=>hd('Ajukan Lagu','<button class="bt" data-a="go" data-v="musik">‹ Musik</button>')+'<div class="pn"><b>Minta izin menambahkan lagu ke playlist permanen</b><small>Tempel link YouTube. Admin memutuskan paling lambat 48 jam; jika disetujui, lagu tampil dan bisa diputar semua pengunjung. “Putar Saja” hanya memutar sementara di perangkatmu.</small></div>'+(SBOK()?'':'<div class="pn"><small>⚠ Pengajuan belum aktif: server (Supabase) belum dikonfigurasi, jadi permintaan belum bisa sampai ke admin.</small></div>')+'<div class="pn"><input class="in" id="aju" placeholder="Link YouTube (youtu.be/… atau youtube.com/watch?v=…)"><img id="ajt" alt="" style="display:none;width:100%;max-width:240px;border-radius:12px;margin:6px 0"><input class="in" id="ajj" placeholder="Judul lagu (otomatis jika tersedia)" maxlength="150"><input class="in" id="ajn" placeholder="Nama pengaju *" maxlength="60"><input class="in" id="aji" placeholder="Username Instagram (opsional)" maxlength="40"><textarea class="in" id="ajm" rows="3" placeholder="Pesan / alasan rekomendasi (opsional)" maxlength="300"></textarea><div class="row" style="margin-top:8px"><button class="bt" data-a="ajplay">▶ Putar Saja</button><button class="bt p" data-a="ajsend">📨 Ajukan ke Playlist</button></div><div id="ajr" style="margin-top:8px"></div></div>';
-document.addEventListener('change',async e=>{if(e.target.id!=='aju')return;const u=e.target.value,v=ytid(u),l=v?null:ytlist(u),im=$('#ajt');if(!v&&!l){if(u.trim())toast('Link YouTube tidak valid','err');im.style.display='none';return}im.src=thumb(v||plSeed(l));im.style.display=im.src?'block':'none';if(v){const m=await ytmeta(v);if(m.t&&!$('#ajj').value)$('#ajj').value=m.t}});
-A.ajplay=async()=>{if(await addSong($('#aju').value))toast('Diputar sementara (tidak masuk playlist permanen)')};
-A.ajsend=async(d,b)=>{const u=$('#aju').value,v=ytid(u),l=v?null:ytlist(u);if(!v&&!l)return toast('Link YouTube tidak valid','err');const n=$('#ajn').value.trim();if(n.length<2)return toast('Nama pengaju wajib diisi','err');
- const t=$('#ajj').value.trim()||'Lagu YouTube',ig=igc($('#aji').value),m=$('#ajm').value.trim();
- if(!SBOK())return toast('Pengajuan belum aktif: server belum dikonfigurasi','err');
- if(Date.now()-(+localStorage.getItem('rzq')||0)<30000)return toast('Tunggu sebentar sebelum mengirim lagi','err');b.disabled=1;
- try{await sb('/rest/v1/song_requests',{m:'POST',j:{video_id:v||null,list_id:l||null,title:t,name:n,ig:ig||null,message:m||null},h:{Prefer:'return=minimal'}});localStorage.setItem('rzq',Date.now());toast('Pengajuan terkirim. Admin memutuskan dalam 48 jam.');['aju','ajj','ajn','aji','ajm'].forEach(k=>$('#'+k).value='');$('#ajt').style.display='none'}catch(e){toast('Gagal mengirim: '+e.message,'err')}b.disabled=0};
+/* ---- Status koneksi database + Realtime playlist ---- */
+async function dbCheck(){if(!SBOK())return;try{await sb('/rest/v1/playlist?select=id&limit=1');S.dbs='✅ Koneksi & tabel OK ('+new Date().toLocaleTimeString('id-ID',{timeZone:'Asia/Makassar'})+' WITA)'}catch(e){S.dbs='❌ '+e.message+' — pastikan backend/supabase_setup.sql sudah dijalankan'}if(cur==='admin')rr()}
+A.dbt=async()=>{S.dbs='Menguji…';rr();await dbCheck();toast(S.dbs,S.dbs[0]==='✅'?'':'err')};
+let RS=null,RHB=0,RRF=0;
+function rtStart(){try{if(!SBOK())return;clearInterval(RHB);clearTimeout(RRF);if(RS){RS.onclose=null;try{RS.close()}catch(e){}}
+ const ws=RS=new WebSocket(SB.url.replace(/^http/,'ws')+'/realtime/v1/websocket?apikey='+encodeURIComponent(SB.key)+'&vsn=1.0.0');let ref=0;
+ const send=(t,e,p)=>{if(ws.readyState===1)ws.send(JSON.stringify({topic:t,event:e,payload:p,ref:String(++ref)}))};
+ ws.onopen=()=>{send('realtime:db','phx_join',{config:{broadcast:{ack:false,self:false},presence:{key:''},postgres_changes:[{event:'*',schema:'public',table:'playlist'}]},access_token:SBT||SB.key});RHB=setInterval(()=>send('phoenix','heartbeat',{}),25000)};
+ ws.onmessage=m=>{try{const j=JSON.parse(m.data);if(j.event==='postgres_changes')ldPl()}catch(e){}};
+ ws.onclose=()=>{clearInterval(RHB);RRF=setTimeout(rtStart,5000)};ws.onerror=()=>{}}catch(e){}}
+const o_dbls=A.dbls;A.dbls=async(d,b)=>{await o_dbls(d,b);rtStart();dbCheck()};
+const o_out2=A.out;A.out=()=>{o_out2();rtStart()};
+/* ================= v4: KUOTA LAGU MINGGUAN + VIDEO GLOBAL =================
+ * Kuota 10 lagu/minggu dihitung dan DITEGAKKAN di database (fungsi add_visitor_song), bukan di browser:
+ * berlaku untuk seluruh pengunjung, otomatis tutup saat penuh, reset otomatis Senin 00.00 WITA atau manual oleh admin. */
+let QS=null;
+async function ldQuota(){if(!SBOK())return;try{const r=await sb('/rest/v1/rpc/song_quota_status',{m:'POST',j:{}}),q=r&&r[0];QS=q?{used:q.used_count,limit:q.limit_count,remaining:q.remaining_count,next:q.next_reset}:null}catch(e){QS=null}const b=$('#qbox');if(b)b.innerHTML=qHTML();if(cur==='admin')rr()}
+const qHTML=()=>!SBOK()?'':QS?'<div class="pn"><b>Kuota penambahan lagu minggu ini: '+QS.used+' / '+QS.limit+'</b><small>'+(QS.remaining>0?'Sisa '+QS.remaining+' lagu untuk seluruh pengunjung. ':'Kuota habis — penambahan lagu ditutup. ')+'Reset otomatis '+wt(QS.next)+' atau oleh admin.</small></div>':'';
+sbAddPl=async function(s){try{let t=s.t,a='YouTube';if(s.v&&!s.pl){const m=await ytmeta(s.v);if(m.t){t=m.t;a=m.a||a}}await sb('/rest/v1/playlist',{m:'POST',j:{video_id:s.pl?null:(s.v||null),list_id:s.pl||null,title:t,author:a,added_by:'admin'},h:{Prefer:'return=minimal'}});await ldPl();return 1}catch(e){toast('Gagal menyimpan ke database: '+e.message,'err');return 0}};
+async function addSong(u){const v=ytid(u),l=v?null:ytlist(u);if(!v&&!l){toast('Link YouTube tidak valid','err');return 0}
+ const same=x=>v?(x.v===v&&!x.pl):x.pl===l;if(LS().some(same)){toast('Lagu sudah ada di playlist','err');return 0}
+ const s=v?{v,t:'Lagu YouTube ('+v+')',a:'YouTube'}:{pl:l,v:plSeed(l),t:'Playlist YouTube',a:'YouTube'};
+ if(isA()){if(sbAdm()){if(!await sbAddPl(s))return 0;slog('Tambah ke playlist: '+(v||l))}
+  else{D.songs.push(s);save();lg('Ditambahkan (lokal): '+(v||l));if(v)ytmeta(v).then(m=>{if(m.t){s.t=m.t;s.a=m.a||s.a;save();ui()}}).catch(()=>{})}
+  toast('Lagu berhasil ditambahkan');ui();const i=LS().findIndex(same);if(pi<0&&i>=0)play(i);return 1}
+ /* pengunjung: lewat fungsi database yang memeriksa kuota global secara atomik */
+ if(!SBOK()){toast('Penambahan lagu belum aktif: '+(SBERR||'server belum dikonfigurasi'),'err');return 0}
+ let t=s.t,a=s.a;if(v){const m=await ytmeta(v);if(m.bad){toast('Video tidak ditemukan atau tidak bisa disematkan','err');return 0}if(m.t){t=m.t;a=m.a||a}}
+ try{await sb('/rest/v1/rpc/add_visitor_song',{m:'POST',j:{p_video:v||null,p_list:l||null,p_title:t,p_author:a}});toast('Lagu berhasil ditambahkan ke playlist bersama');await ldPl();await ldQuota();const i=LS().findIndex(same);if(pi<0&&i>=0)play(i);return 1}
+ catch(e){toast(/quota_exhausted/.test(e.message)?'Kuota penambahan lagu minggu ini sudah habis':/duplicate/.test(e.message)?'Lagu sudah ada di playlist':'Gagal menambahkan: '+e.message,'err');await ldQuota();return 0}}
+const o_adds3=A.adds;
+A.adds=async()=>{try{if(isA())return o_adds3();
+ if(!SBOK())return dlg('Tambahkan Lagu YouTube','<div class="pn"><small>Penambahan lagu belum aktif: '+esc(SBERR||'server belum dikonfigurasi')+'.</small></div>');
+ await ldQuota();
+ if(QS&&QS.remaining<=0)return dlg('Penambahan Lagu Ditutup','<p>Kuota minggu ini sudah habis ('+QS.used+'/'+QS.limit+').</p><small>Dibuka kembali otomatis '+wt(QS.next)+' atau saat admin mereset kuota.</small>');
+ dlg('Tambahkan Lagu YouTube','<input class="in" id="yu" placeholder="https://youtu.be/… atau https://www.youtube.com/watch?v=…"><small>'+(QS?'Sisa kuota minggu ini: '+QS.remaining+' dari '+QS.limit+' lagu (untuk seluruh pengunjung). ':'')+'Lagu masuk ke playlist bersama yang dapat didengar semua pengunjung.</small><button class="bt p" data-a="addsg" style="margin-top:8px">Tambahkan</button>')}
+ catch(e){toast('Gagal membuka form: '+e.message,'err')}};
+A.qreset=async()=>{if(!sbAdm())return toast('Masuk database admin dahulu','err');if(!confirm('Reset kuota lagu minggu ini? Pemakaian kembali menjadi 0.'))return;try{await sb('/rest/v1/rpc/reset_song_quota',{m:'POST',j:{}});toast('Kuota lagu direset');await ldQuota();rr()}catch(e){toast('Gagal: '+e.message,'err')}};
+const v_mus3=V.musik;V.musik=()=>{if(SBOK())ldQuota();return v_mus3().replace('Lagu dari pengunjung hanya berlaku di sesi ini; lagu admin tersimpan permanen di perangkat admin.','Pengunjung dapat menambah lagu ke playlist bersama dengan kuota terbatas per minggu (untuk seluruh pengunjung); admin dapat menghapus lagu dan mereset kuota.')+'<div id="qbox">'+qHTML()+'</div>'};
+const v_adm3=V.admin;V.admin=()=>{if(sbAdm()&&Date.now()-(S.qt||0)>30000){S.qt=Date.now();ldQuota()}return v_adm3()};
+
+/* ---- VIDEO GLOBAL (Database + Storage bucket "videos") ---- */
+let GVD=[];const VDL=()=>GVD.concat(D.videos);
+async function ldVd(){if(!SBOK())return;try{const r=await sb('/rest/v1/videos?select=*&order=created_at.desc');GVD=r.map(v=>({id:v.id,t:v.title,ds:v.description||'',c:v.category||'Umum',d:new Date(v.created_at).toLocaleDateString('id-ID',{timeZone:'Asia/Makassar'}),y:sv(v.youtube_id)||null,u:v.url||null,path:v.path,g:1}));S.vde=''}catch(e){S.vde=e.message}S.vdl=1;if(cur==='video'&&$('#vgd'))$('#vgd').innerHTML=vgrid(VDL())}
+V.video=()=>{if(SBOK())ldVd();return hd('Galeri Video',isA()?'<button class="bt p" data-a="upv">＋ Tambah Video</button>':'')+(!SBOK()?'<div class="pn"><small>Database global belum dikonfigurasi: video yang diunggah hanya tersimpan di perangkat ini.</small></div>':S.vde?'<div class="pn"><small>⚠ Database tidak dapat diakses ('+esc(S.vde)+'). Menampilkan video lokal saja.</small></div>':!S.vdl?'<div class="pn"><small>Memuat video dari database…</small></div>':'')+'<div id="vgd">'+vgrid(VDL())+'</div>'};
+function sbUp(bucket,path,file,onp){return new Promise((ok,no)=>{const x=new XMLHttpRequest();x.open('POST',SB.url+'/storage/v1/object/'+bucket+'/'+encodeURI(path));x.setRequestHeader('apikey',SB.key);x.setRequestHeader('Authorization','Bearer '+SBT);x.setRequestHeader('Content-Type',file.type);x.setRequestHeader('x-upsert','false');
+ x.upload.onprogress=e=>{if(e.lengthComputable&&onp)onp(Math.round(e.loaded/e.total*100))};
+ x.onload=()=>{if(x.status<300)return ok();let m='HTTP '+x.status;try{m=JSON.parse(x.responseText).message||m}catch(e){}no(Error(m))};x.onerror=()=>no(Error('Jaringan terputus'));x.send(file)})}
+const need=()=>{if(SBOK()&&isA()&&!sbAdm()){toast('Masuk database admin dahulu agar unggahan tersimpan global','err');A.dbl();return true}return false};
+const o_upf3=A.upf;A.upf=()=>{if(need())return;o_upf3()};
+const o_upv3=A.upv;A.upv=()=>{if(need())return;o_upv3();const m=$$('.mo').pop();if(m)m.querySelector('h3').insertAdjacentHTML('afterend','<small>'+(sbAdm()?'🌐 Disimpan global di database (file video maks 50 MB; MP4/WEBM/MOV).':'📱 Database belum aktif: video hanya tersimpan di perangkat ini.')+'</small>')};
+const o_upvs=A.upvs;
+A.upvs=async(d,b)=>{if(!sbAdm())return o_upvs(d,b);const u=$('#vy').value.trim(),f=$('#vf').files[0],y=u?ytid(u):null;
+ if(u&&!y)return toast('Link YouTube tidak valid','err');if(!u&&!f)return toast('Isi link YouTube atau pilih file video','err');
+ let t=$('#vt').value.trim(),path=null,url=null;b.disabled=1;
+ try{if(f){if(!/^video\/(mp4|webm|quicktime)$/.test(f.type)||f.size>50e6)throw Error('Format harus MP4/WEBM/MOV dan maksimal 50 MB');
+   await sb('/rest/v1/rpc/is_admin',{m:'POST',j:{}});          /* menyegarkan token bila kedaluwarsa */
+   path=Date.now()+'-'+Math.random().toString(36).slice(2,8)+'.'+(f.type==='video/quicktime'?'mov':f.type.split('/')[1]);
+   b.textContent='Mengunggah 0%';await sbUp('videos',path,f,p=>{b.textContent='Mengunggah '+p+'%'});url=SB.url+'/storage/v1/object/public/videos/'+encodeURI(path)}
+  else if(!t){const m=await ytmeta(y);t=m.t||''}
+  try{await sb('/rest/v1/videos',{m:'POST',j:{title:(t||(f?f.name:'Video YouTube')).slice(0,150),description:$('#vd').value.trim().slice(0,1000),category:$('#vk').value,youtube_id:f?null:(y||null),path,url},h:{Prefer:'return=minimal'}})}
+  catch(e){if(path)await sb('/storage/v1/object/videos/'+path,{m:'DELETE'}).catch(()=>{});throw e}
+  slog('Video global: '+(t||'(tanpa judul)'));toast('Video berhasil disimpan di database');await ldVd();$$('.mo').forEach(m=>m.remove());go('video')}
+ catch(e){b.disabled=0;b.textContent='Simpan';toast('Gagal: '+e.message,'err')}};
+A.vo=async d=>{const v=VDL().find(x=>x.id===d.id);if(!v)return;const o=dlg(esc(v.t),v.y?'<iframe src="https://www.youtube.com/embed/'+sv(v.y)+'?rel=0" allow="fullscreen;encrypted-media;picture-in-picture" allowfullscreen></iframe>':'<video controls playsinline></video>','w');
+ if(!v.y){try{o.querySelector('video').src=v.u||await furl(v.id)}catch(e){toast('Video tidak dapat dimuat','err')}}o.querySelector('.md').insertAdjacentHTML('beforeend','<small>'+esc(v.ds)+'</small>')};
+A.evd=d=>{const v=VDL().find(x=>x.id===d.id);if(!v)return;dlg('Edit Video','<input class="in" id="ev" value="'+esc(v.t)+'"><textarea class="in" id="ed">'+esc(v.ds)+'</textarea><select class="in" id="ek">'+catOpts(v.c)+'</select><button class="bt p" data-a="evds" data-id="'+v.id+'">Simpan</button>')};
+A.evds=async d=>{const v=VDL().find(x=>x.id===d.id);if(!v)return;const t=$('#ev').value.trim()||v.t,ds=$('#ed').value.trim(),c=$('#ek').value;
+ try{if(v.g){await sb('/rest/v1/videos?id=eq.'+encodeURIComponent(v.id),{m:'PATCH',j:{title:t,description:ds,category:c},h:{Prefer:'return=minimal'}});await ldVd()}else{v.t=t;v.ds=ds;v.c=c;save()}slog('Edit video');toast('Data berhasil disimpan')}catch(e){return toast('Gagal: '+e.message,'err')}$$('.mo').forEach(m=>m.remove());go('video')};
+A.dvd=async d=>{const v=VDL().find(x=>x.id===d.id);if(!v||!confirm('Hapus video ini'+(v.g?' dari database (berlaku untuk semua pengunjung)':'')+'?'))return;
+ try{if(v.g){await sb('/rest/v1/videos?id=eq.'+encodeURIComponent(v.id),{m:'DELETE'});if(v.path)await sb('/storage/v1/object/videos/'+v.path,{m:'DELETE'}).catch(()=>{});await ldVd()}else{try{await fdel(v.id)}catch(e){}D.videos=D.videos.filter(x=>x.id!==v.id);save()}slog('Hapus video');toast('Data berhasil dihapus')}catch(e){return toast('Gagal: '+e.message,'err')}go('video')};
+const o_dbls3=A.dbls;A.dbls=async(d,b)=>{await o_dbls3(d,b);ldVd();ldQuota()};
+
 /* ---- Init ---- */
 $$('.lg').forEach(i=>i.src=LOGO);$('#fav').href=LOGO;
 $('#nav').innerHTML=N.map(n=>'<button data-a="go" data-v="'+n[0]+'"><span>'+n[1]+'</span><span class="tx">'+n[2]+'</span></button>').join('');
@@ -498,8 +588,9 @@ applyS();abtn();$('#pvl').value=D.set.vol;
 try{if(!sessionStorage.getItem('rzv')){sessionStorage.setItem('rzv','1');D.visits++;save()}}catch(e){}
 setInterval(tick,250);
 if(D.set.auto)document.addEventListener('click',()=>{if(pi<0&&LS().length)play(0)},{once:true});
-ui();vzLoop();ldWx();setInterval(ldWx,6e5);
-if(SBOK()){ldPh();ldPl();if(sbAdm())ldRq(1);setInterval(()=>{ldPh();ldPl()},6e4);setInterval(()=>{if(sbAdm())ldRq(1)},2e4)}
+try{localStorage.removeItem("rzss")}catch(e){}
+ui();rtStart();dbCheck();ldWx();setInterval(ldWx,6e5);
+if(SBOK()){ldPh();ldPl();ldVd();ldQuota();setInterval(()=>{ldPh();ldPl();ldVd();ldQuota()},6e4)}
 setInterval(()=>{if(cur==='rating'&&SBOK())ldRt()},2e4);
 go((location.hash||'').slice(1)||'beranda');
 </script></body></html>
