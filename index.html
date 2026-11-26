@@ -81,6 +81,7 @@ input[type=range]{accent-color:var(--pu)}
 .tw{overflow-x:auto}.tw table{border-collapse:collapse;min-width:660px;width:100%;font-size:13px}.tw td,.tw th{padding:6px 8px;border-bottom:1px solid var(--bd);text-align:left}
 @media(max-width:820px){.wx{padding:4px 8px;font-size:12px}header{flex-wrap:wrap;gap:6px}.dot{display:none}#ab{font-size:12px}}
 
+.stcv{width:100%;max-width:360px;border-radius:14px;background:#000;display:block;margin:0 auto}.pbar{height:10px;border-radius:9px;background:var(--p2);overflow:hidden;margin:6px 0}.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--pu),var(--cy));transition:width .5s}.stg{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin:6px 0}details summary{cursor:pointer}
 </style></head><body>
 <div id="shell">
 <aside id="sb"><div class="brand"><img class="lg" alt="RZ"><span class="tx">RIZA'S<br>DIGITAL ROOM</span></div><nav id="nav"></nav><button class="bt" style="width:100%;margin-top:12px" data-a="col" id="cb">⇔ <span class="tx">Ciutkan</span></button></aside>
@@ -248,7 +249,7 @@ const allQ=()=>Q.concat(D.quotes.map(q=>[q.t,q.a||'Anonim',q.c||'Pribadi',q.s||'
 let qo=0;const gcd=(a,b)=>b?gcd(b,a%b):a,qi=b=>{const[y,m,d]=ymd().split('-').map(Number),n=allQ().length;let k=7;while(gcd(k,n)!==1)k++;return(((Math.floor(Date.UTC(y,m-1,d)/864e5)-(b||0))*k+qo)%n+n)%n};
 const qcard=(q,big)=>'<div class="pn"><span class="chip">'+esc(q[2])+'</span><p class="'+(big?'q':'')+'" style="margin:10px 0">“'+esc(q[0])+'”</p><b>— '+esc(q[1])+'</b><small>'+(q[3]?'Sumber: '+esc(q[3]):'Sumber atribusi belum terverifikasi.')+'</small></div>';
 /* ---- Router SPA ---- */
-const N=[['beranda','🏠','Beranda'],['profil','👤','Profil'],['foto','🖼','Galeri Foto'],['video','🎬','Galeri Video'],['musik','🎵','Musik'],['kutipan','💬','Kutipan Hari Ini'],['kalender','📅','Kalender'],['jam','🕒','Jam Dunia'],['statistik','📊','Statistik'],['rating','⭐','Penilaian'],['instagram','📷','Instagram'],['pengaturan','⚙️','Pengaturan']];
+const N=[['beranda','🏠','Beranda'],['profil','👤','Profil'],['foto','🖼','Galeri Foto'],['video','🎬','Galeri Video'],['musik','🎵','Musik'],['studio','🎬','Lyrics Studio'],['kutipan','💬','Kutipan Hari Ini'],['kalender','📅','Kalender'],['jam','🕒','Jam Dunia'],['statistik','📊','Statistik'],['rating','⭐','Penilaian'],['instagram','📷','Instagram'],['pengaturan','⚙️','Pengaturan']];
 const V={},S={};let cur='beranda';
 const hd=(t,x)=>'<div class="hd"><h2>'+t+'</h2><div class="row">'+(x||'')+'</div></div>';
 const igb='<a class="bt p" href="'+IG+'" target="_blank" rel="noopener">Buka Instagram</a>';
@@ -287,7 +288,7 @@ V.cari=()=>hd('Pencarian')+'<input class="in" id="gq" placeholder="Cari foto, vi
 function gres(q){q=q.toLowerCase().trim();const r=$('#gr');if(!q){r.innerHTML='';return}const h=(a,b)=>(a+' '+b).toLowerCase().includes(q);
  const P2=PH().filter(p=>h(p.cap,p.c)),V2=VDL().filter(v=>h(v.t+' '+v.ds,v.c)),S2=LS().filter(s=>h(s.t,s.a)),Q2=allQ().filter(x=>h(x[0]+' '+x[1],x[2]));
  r.innerHTML=(P2.length?'<h3>Foto</h3><div class="gal">'+P2.map(p=>'<figure class="ph"><img '+pimg(p)+' alt=""><figcaption>'+esc(p.cap)+'<small>'+esc(p.c)+'</small></figcaption></figure>').join('')+'</div>':'')+(V2.length?'<h3>Video</h3>'+vgrid(V2):'')+(S2.length?'<h3>Lagu</h3>'+S2.map(s=>'<div class="ln" data-a="psel" data-i="'+LS().indexOf(s)+'"><img src="'+thumb(s.v)+'" alt=""><div><b>'+esc(s.t)+'</b><small>'+esc(s.a)+'</small></div></div>').join(''):'')+(Q2.length?'<h3>Kutipan</h3>'+Q2.map(x=>qcard(x)).join(''):'')||'<div class="pn"><small>Tidak ada hasil.</small></div>';media()}
-V.admin=()=>!isA()?V.beranda():hd('Dashboard Admin','<button class="bt d" data-a="out">Logout</button>')+'<div class="grid">'+[['upf','🖼','Upload Foto'],['upv','🎬','Upload / Tambah Video'],['adds','🎵','Tambahkan Lagu YouTube'],['qreset','🔄','Reset Kuota Lagu Mingguan'],['go-musik','📜','Kelola Playlist'],['go-foto','✎','Kelola Galeri (edit/hapus)'],['qm','💬','Kelola Kutipan'],['catm','🏷','Kelola Kategori'],['ebio','👤','Kelola Profil']].map(a=>'<button class="cd2" style="color:#fff;text-align:left" data-a="'+(a[0].startsWith('go-')?'go':a[0])+'" data-v="'+a[0].slice(3)+'"><div class="e">'+a[1]+'</div><b>'+a[2]+'</b></button>').join('')+'</div><small>Admin hanya pembatas tampilan, bukan keamanan server.</small>';
+V.admin=()=>!isA()?V.beranda():hd('Dashboard Admin','<button class="bt d" data-a="out">Logout</button>')+'<div class="grid">'+[['upf','🖼','Upload Foto'],['upv','🎬','Upload / Tambah Video'],['adds','🎵','Tambahkan Lagu YouTube'],['qreset','🔄','Reset Kuota Lagu Mingguan'],['go-astudio','🎞','Studio Lirik (Persetujuan)'+(typeof SPN!=='undefined'&&SPN?'<span class="bdg">'+SPN+'</span>':'')],['go-musik','📜','Kelola Playlist'],['go-foto','✎','Kelola Galeri (edit/hapus)'],['qm','💬','Kelola Kutipan'],['catm','🏷','Kelola Kategori'],['ebio','👤','Kelola Profil']].map(a=>'<button class="cd2" style="color:#fff;text-align:left" data-a="'+(a[0].startsWith('go-')?'go':a[0])+'" data-v="'+a[0].slice(3)+'"><div class="e">'+a[1]+'</div><b>'+a[2]+'</b></button>').join('')+'</div><small>Admin hanya pembatas tampilan, bukan keamanan server.</small>';
 /* ---- Aksi (event delegation) ---- */
 const A={
 go:(d)=>go(d.v),menu:()=>$('#sb').classList.toggle('open'),col:()=>$('#sb').classList.toggle('mini'),cl:(d,b)=>b.closest('.mo').remove(),
@@ -453,7 +454,7 @@ A.dbls=async(d,b)=>{b.disabled=1;try{await sbLogin($('#dbe').value.trim(),$('#db
 const o_login=A.login;A.login=()=>{o_login();if(isA()&&SBOK()&&!SBT)setTimeout(A.dbl,350)};
 const o_out=A.out;A.out=()=>{sbOut();AR=[];o_out()};
 abtn=function(){$('#ab').innerHTML=isA()?'👤 Admin ✓':'👤 Login Admin'};
-V.admin=()=>{if(!isA())return V.beranda();const it=[['upf','🖼','Upload Foto Global'],['go-foto','🗄','Database Foto'],['go-musik','📜','Playlist Permanen'],['go-arat','⭐','Penilaian Pengunjung'],['xl','📥','Ekspor Excel'],['go-arat','🛡','Moderasi Komentar'],['go-statistik','📊','Statistik'],['go-alog','🧾','Riwayat Aktivitas'],['upv','🎬','Upload / Tambah Video'],['adds','🎵','Tambahkan Lagu YouTube'],['qreset','🔄','Reset Kuota Lagu Mingguan'],['qm','💬','Kelola Kutipan'],['catm','🏷','Kelola Kategori'],['ebio','👤','Kelola Profil']];
+V.admin=()=>{if(!isA())return V.beranda();const it=[['upf','🖼','Upload Foto Global'],['go-foto','🗄','Database Foto'],['go-musik','📜','Playlist Permanen'],['go-arat','⭐','Penilaian Pengunjung'],['xl','📥','Ekspor Excel'],['go-arat','🛡','Moderasi Komentar'],['go-statistik','📊','Statistik'],['go-alog','🧾','Riwayat Aktivitas'],['upv','🎬','Upload / Tambah Video'],['adds','🎵','Tambahkan Lagu YouTube'],['qreset','🔄','Reset Kuota Lagu Mingguan'],['go-astudio','🎞','Studio Lirik (Persetujuan)'+(typeof SPN!=='undefined'&&SPN?'<span class="bdg">'+SPN+'</span>':'')],['qm','💬','Kelola Kutipan'],['catm','🏷','Kelola Kategori'],['ebio','👤','Kelola Profil']];
  return hd('Dashboard Admin','<button class="bt d" data-a="out">Logout</button>')+'<div class="pn"><b>Status database:</b> '+(!SBOK()?(SBERR?'⚠ '+esc(SBERR):'belum dikonfigurasi (isi config.js) — fitur global nonaktif'):sbAdm()?'🟢 terhubung & login admin':'🟡 terkonfigurasi, belum masuk database')+(SBOK()&&!sbAdm()?' <button class="bt p" style="padding:6px 12px" data-a="dbl">Masuk Database</button>':'')+(SBOK()?' <button class="bt" style="padding:6px 12px" data-a="dbt">Uji Koneksi</button><small>'+esc(S.dbs||'')+'</small>':'')+(SBOK()?'<br><small>Kuota lagu minggu ini: '+(QS?QS.used+' / '+QS.limit+(QS.remaining<=0?' (ditutup)':''):'memuat…')+'</small>':'')+'</div><div class="grid">'+it.map(a=>'<button class="cd2" style="color:#fff;text-align:left" data-a="'+(a[0].startsWith('go-')?'go':a[0])+'" data-v="'+a[0].slice(3)+'"><div class="e">'+a[1]+'</div><b>'+a[2]+'</b></button>').join('')+'</div><small>Kode admin di HTML hanya pembatas tampilan; keamanan data global dijaga oleh Supabase Auth + RLS.</small>'};
 
 /* ---- CUACA BANJARMASIN (Open-Meteo) ---- */
@@ -581,6 +582,232 @@ A.dvd=async d=>{const v=VDL().find(x=>x.id===d.id);if(!v||!confirm('Hapus video 
  try{if(v.g){await sb('/rest/v1/videos?id=eq.'+encodeURIComponent(v.id),{m:'DELETE'});if(v.path)await sb('/storage/v1/object/videos/'+v.path,{m:'DELETE'}).catch(()=>{});await ldVd()}else{try{await fdel(v.id)}catch(e){}D.videos=D.videos.filter(x=>x.id!==v.id);save()}slog('Hapus video');toast('Data berhasil dihapus')}catch(e){return toast('Gagal: '+e.message,'err')}go('video')};
 const o_dbls3=A.dbls;A.dbls=async(d,b)=>{await o_dbls3(d,b);ldVd();ldQuota()};
 
+/* ================= AI LYRICS MOTION STUDIO =================
+ * Browser hanya: mengisi form, mengunggah sumber ke Storage, membuat preview (canvas), mengantre job, memantau progres,
+ * dan meminta unduhan. Render video (watermark tertanam) dilakukan WORKER SERVER; hak unduh tanpa watermark dijaga
+ * oleh database (RLS Storage + fungsi studio_decide) — tombol di sini hanya tampilan, server yang memutuskan. */
+let STT=localStorage.getItem('rzst')||'',STR=localStorage.getItem('rzsr')||'';
+const jwtP=t=>{try{return JSON.parse(atob(t.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')))}catch(e){return null}};
+const stSet=j=>{STT=j.access_token;STR=j.refresh_token;try{localStorage.setItem('rzst',STT);localStorage.setItem('rzsr',STR)}catch(e){}};
+const stUid=()=>(jwtP(STT)||{}).sub;
+async function stTok(){const p=STT&&jwtP(STT);if(p&&p.exp*1000>Date.now()+60000)return STT;
+ if(STR){try{const r=await fetch(SB.url+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{apikey:SB.key,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:STR})});const j=await r.json();if(r.ok){stSet(j);return STT}}catch(e){}}
+ const r=await fetch(SB.url+'/auth/v1/signup',{method:'POST',headers:{apikey:SB.key,'Content-Type':'application/json'},body:JSON.stringify({data:{},gotrue_meta_security:{}})});const j=await r.json().catch(()=>({}));
+ if(!r.ok)throw Error((j.msg||j.error_description||'Sesi anonim gagal')+' — di Supabase aktifkan "Allow anonymous sign-ins" (dan pastikan "Allow new users to sign up" menyala)');stSet(j);return STT}
+async function ss(path,o){o=o||{};const t=await stTok();const r=await fetch(SB.url+path,{method:o.m||'GET',headers:Object.assign({apikey:SB.key,Authorization:'Bearer '+t},o.h||{},o.j!==undefined?{'Content-Type':'application/json'}:{}),body:o.j!==undefined?JSON.stringify(o.j):o.b});
+ if(!r.ok){let m='';try{const j=await r.json();m=j.message||j.error||''}catch(e){}throw Error(m||'HTTP '+r.status)}const x=await r.text();return x?JSON.parse(x):null}
+const STE={busy:'Masih ada proses berjalan. Tunggu selesai (maks 2 proses bersamaan).',daily_limit:'Batas 8 proses per 24 jam tercapai.',rights_required:'Centang pernyataan izin penggunaan dahulu.',locked:'Proyek sedang diajukan/sudah disetujui sehingga terkunci.',source_missing:'Unggah file sumber dahulu.',render_not_ready:'Render belum selesai.',project_limit:'Maksimal 20 proyek. Hapus proyek lama.',not_found:'Proyek tidak ditemukan.',not_submitted:'Proyek belum diajukan pemilik.',forbidden:'Hanya admin.'};
+const stErr=e=>{const m=String(e&&e.message||e);for(const k in STE)if(m.includes(k))return STE[k];return m};
+const slug=t=>String(t||'video').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'video';
+const FCSS={montserrat:'Montserrat,Poppins,sans-serif',roboto:'Roboto,sans-serif','noto-serif':"'Noto Serif',Georgia,serif",lobster:'Lobster,cursive',mono:"'DejaVu Sans Mono',monospace"};
+const EFX=[['auto','Otomatis (campur / AI)'],['fade','Fade'],['slideup','Geser naik'],['slideleft','Geser kiri'],['zoom','Zoom'],['blur','Blur masuk'],['bounce','Bounce'],['karaoke','Karaoke (sorot kata)']];
+const MIXE=['fade','slideup','zoom','blur','slideleft','bounce'];
+const ST={sp:null,file:null,list:null,tap:null,med:null,raf:0,off:0,t0:0,play:false,poll:0,job:null,tim:[],dur:0,st:{}};
+
+/* ---- parsing & waktu (sama logikanya dengan server) ---- */
+function stParse(text){const L=[];let lrc=false;String(text||'').split(/\r?\n/).forEach(raw=>{const r=raw.trim();if(!r)return;const tg=[...r.matchAll(/\[(\d{1,3}):(\d{1,2}(?:[.:]\d{1,3})?)\]/g)],b=r.replace(/\[[^\]]*\]/g,'').trim();
+ if(tg.length){lrc=true;if(b)tg.forEach(m=>L.push({text:b,t:+m[1]*60+parseFloat(m[2].replace(':','.'))}));return}if(b)L.push({text:b,t:null})});
+ const all=lrc&&L.every(l=>l.t!=null);if(all)L.sort((a,b)=>a.t-b.t);else L.forEach(l=>l.t=null);return{lines:L.slice(0,200),lrc:all}}
+function stTimings(text,dur){const P=stParse(text);if(ST.tap&&ST.tap.length===P.lines.length&&ST.tap.every((x,i)=>x.text===P.lines[i].text))return{t:ST.tap,mode:'manual'};
+ if(P.lrc)return{t:P.lines.map(l=>({t:l.t,text:l.text})),mode:'lrc'};
+ const s=Math.min(3,dur*.08),e=dur-Math.min(3,dur*.05),w=P.lines.map(l=>8+l.text.length),tot=w.reduce((a,b)=>a+b,0);let acc=0;
+ return{t:P.lines.map((l,i)=>{const t=s+(e-s)*acc/tot;acc+=w[i];return{t:+t.toFixed(2),text:l.text}}),mode:'estimasi'}}
+
+/* ---- daftar proyek & editor ---- */
+const ISTYLE={font:'montserrat',textColor:'#ffffff',accent:'#22d3ee',bg1:'#14123a',bg2:'#5b2bd6',bg3:'#0e7490',effect:'auto',ratio:'9:16',wave:false,vignette:true,align:'center',scale:1,ai:false};
+const APL={draft:'Draft',pending:'Menunggu Persetujuan',approved:'Disetujui',rejected:'Ditolak'},RNL={none:'Belum dirender',queued:'Antre',processing:'Memproses',done:'Selesai',failed:'Gagal'};
+async function stList(){try{ST.list=await ss('/rest/v1/studio_projects?select=id,title,render_status,render_progress,approval,created_at,duration&order=created_at.desc');ST.lerr=''}catch(e){ST.list=[];ST.lerr=stErr(e)}if(cur==='studio'&&!ST.sp)rr()}
+const stFlow='<div class="pn"><b>Alur</b><small>① Sumber & izin → ② Lirik → ③ Gaya & AI → ④ Preview (& Tap-Sync) → ⑤ Render di server → ⑥ Unduh versi <b>watermark “rizarz9”</b> kapan saja → ⑦ Ajukan ke admin → jika <b>disetujui</b>, tombol unduh <b>tanpa watermark</b> terbuka (dicek server setiap unduhan). Jika ditolak, tetap bisa unduh versi watermark + baca catatan revisi.</small></div>';
+const stPriv='<details class="pn"><summary><b>Privasi & batasan keamanan</b></summary><small><br>• Proyek memakai <b>akun anonim di perangkat ini</b> (tanpa email). Tanpa login, riwayat hanya terbaca dari perangkat/browser yang sama; menghapus data browser memutus akses ke proyek lama.<br>• Data tersimpan: nama tampilan, Instagram (opsional), lirik, file sumber, hasil render, status & catatan admin. <b>Privat</b>: hanya kamu dan admin yang dapat membukanya; tidak ditampilkan di galeri.<br>• Lirik dikirim ke penyedia AI (Anthropic) hanya untuk merancang gerak, jika AI diaktifkan di server. <b>File audio/video tidak dikirim ke AI.</b><br>• Unggah hanya karya milikmu atau yang kamu punya izin menggunakannya (audio, video, dan lirik). Admin dapat menolak.<br>• Link YouTube/TikTok hanya <b>referensi</b>: audio tidak diambil dari platform (syarat layanan & hak cipta). Untuk musik, unggah MP3/MP4 milikmu; tanpa file, video dibuat tanpa suara.<br>• Batas: durasi ≤ 4 menit, MP3 ≤ 25 MB, MP4 ≤ 50 MB, 8 proses/24 jam, 20 proyek.<br>• Watermark tertanam di piksel video oleh server dan tidak dapat dilepas dari file. Versi tanpa watermark baru dapat diunduh setelah disetujui — dicek server tiap permintaan. Layar preview boleh direkam, karena itu preview diberi watermark kecil.<br>• “Hapus proyek” menghapus data & file-nya dari server. Admin juga dapat menghapus.</small></details>';
+V.studio=()=>{if(!SBOK())return hd('AI Lyrics Motion Studio')+'<div class="pn"><small>⚠ Fitur ini butuh database &amp; server render: '+esc(SBERR||'Supabase belum dikonfigurasi')+'. Lihat panduan backend/render-worker/README.md.</small></div>'+stFlow+stPriv;
+ if(!ST.list&&!ST.lx){ST.lx=1;stList().finally(()=>ST.lx=0)}
+ return hd('AI Lyrics Motion Studio','<span class="chip">Beta</span>'+(ST.sp?'<button class="bt" data-a="stback">‹ Proyek saya</button>':'<button class="bt p" data-a="stnew">＋ Proyek Baru</button>'))+(ST.sp?stEditor():stFlow+'<div class="pn"><b>Proyek saya</b>'+(ST.lerr?'<small>⚠ '+esc(ST.lerr)+'</small>':'')+(ST.list?ST.list.map(p=>'<div class="ln" data-a="stopen" data-id="'+p.id+'"><div><b>'+esc(p.title)+'</b><small>'+wt(p.created_at)+'</small></div><span class="chip">'+RNL[p.render_status]+(p.render_status==='processing'?' '+p.render_progress+'%':'')+'</span><span class="chip st-'+(p.approval==='pending'?'pending':p.approval)+'">'+APL[p.approval]+'</span><button data-a="stdel" data-id="'+p.id+'" aria-label="Hapus">🗑</button></div>').join('')||'<small>Belum ada proyek.</small>':'<small>Memuat…</small>')+'</div>'+stPriv)};
+A.stnew=()=>{ST.sp={style:{...ISTYLE},source_type:'none'};ST.file=null;ST.tap=null;stStop();rr()};
+A.stback=()=>{ST.sp=null;ST.file=null;ST.list=null;stStop();clearTimeout(ST.poll);rr()};
+A.stopen=async d=>{try{const r=await ss('/rest/v1/studio_projects?id=eq.'+encodeURIComponent(d.id)+'&select=*');ST.sp=r[0];ST.file=null;ST.tap=null;stStop();rr();stPoll()}catch(e){toast(stErr(e),'err')}};
+A.stdel=async d=>{if(!confirm('Hapus proyek beserta semua file-nya dari server?'))return;try{const r=await ss('/rest/v1/studio_projects?id=eq.'+encodeURIComponent(d.id)+'&select=owner,source_path,wm_path,clean_path');const p=r[0];
+ if(p)for(const [b,k] of [['studio-src','source_path'],['studio-wm','wm_path'],['studio-clean','clean_path']])if(p[k])await ss('/storage/v1/object/'+b+'/'+encodeURI(p[k]),{m:'DELETE'}).catch(()=>{});
+ await ss('/rest/v1/studio_projects?id=eq.'+encodeURIComponent(d.id),{m:'DELETE'});toast('Proyek dihapus');ST.list=null;if(ST.sp&&ST.sp.id===d.id)ST.sp=null;rr()}catch(e){toast(stErr(e),'err')}};
+function stEditor(){const p=ST.sp,s=Object.assign({},ISTYLE,p.style||{}),ty=p.source_type||'none',up=/^upload/.test(ty)?'upload':ty,
+ op=(a,v)=>a.map(x=>'<option value="'+x[0]+'"'+(x[0]===v?' selected':'')+'>'+x[1]+'</option>').join(''),ck=(id,v,l)=>'<label class="row" style="gap:6px"><input type="checkbox" id="'+id+'"'+(v?' checked':'')+'> '+l+'</label>',
+ rd=(v,l)=>'<label class="row" style="gap:6px"><input type="radio" name="stsrc" value="'+v+'"'+(up===v?' checked':'')+'> '+l+'</label>',cl=(id,v,l)=>'<label><small>'+l+'</small><input class="in" type="color" id="'+id+'" value="'+v+'" style="height:40px;padding:2px"></label>';
+ return'<div class="pn"><b>① Sumber & izin</b><input class="in" id="st_name" placeholder="Nama tampilan *" maxlength="60" value="'+esc(p.creator_name||'')+'"><input class="in" id="st_ig" placeholder="Username Instagram (opsional)" maxlength="40" value="'+esc(p.creator_ig||'')+'"><input class="in" id="st_title" placeholder="Judul proyek" maxlength="100" value="'+esc(p.title||'')+'">'+
+ rd('upload','Unggah audio MP3 / video MP4 milikku')+'<input class="in" type="file" id="st_file" accept=".mp3,.mp4,audio/mpeg,video/mp4">'+(p.source_name?'<small>File tersimpan: '+esc(p.source_name)+'</small>':'')+
+ rd('youtube','Link YouTube (referensi)')+rd('tiktok','Link TikTok (referensi)')+'<input class="in" id="st_url" placeholder="https://…" value="'+esc(p.source_url||'')+'"><small>Link tidak diunduh audionya; hasil video tanpa suara kecuali kamu mengunggah file.</small>'+rd('none','Tanpa audio (hanya animasi lirik)')+
+ ck('st_rights',p.rights_confirmed,'<b>Saya pemilik, atau memiliki izin penggunaan, atas audio/video dan lirik ini *</b>')+'<input class="in" id="st_rnote" placeholder="Keterangan izin (mis. karya sendiri / lisensi CC / izin tertulis)" maxlength="300" value="'+esc(p.rights_note||'')+'"></div>'+
+ '<div class="pn"><b>② Lirik</b><textarea class="in" id="st_lyr" rows="9" maxlength="8000" placeholder="Satu baris per teks. Waktu tepat: format LRC [mm:ss.xx] baris lirik">'+esc(p.lyrics||'')+'</textarea><input class="in" id="st_lrights" placeholder="Sumber/izin lirik (karya sendiri / berlisensi: sebutkan)" maxlength="300" value="'+esc(p.lyrics_rights||'')+'"></div>'+
+ '<div class="pn"><b>③ Gaya & AI</b><div class="row"><select class="in" id="st_font" style="flex:1">'+op([['montserrat','Montserrat'],['roboto','Roboto'],['noto-serif','Noto Serif'],['lobster','Lobster'],['mono','Mono']],s.font)+'</select><select class="in" id="st_eff" style="flex:1">'+op(EFX,s.effect)+'</select></div><div class="row"><select class="in" id="st_ratio" style="flex:1">'+op([['9:16','9:16 (HP / Reels)'],['16:9','16:9 (YouTube)'],['1:1','1:1 (kotak)']],s.ratio)+'</select><select class="in" id="st_align" style="flex:1">'+op([['center','Rata tengah'],['left','Rata kiri']],s.align)+'</select></div>'+
+ '<div class="stg">'+cl('st_tc',s.textColor,'Teks')+cl('st_ac',s.accent,'Sorot')+cl('st_b1',s.bg1,'Latar 1')+cl('st_b2',s.bg2,'Latar 2')+cl('st_b3',s.bg3,'Latar 3')+'</div><label><small>Ukuran teks</small><input type="range" id="st_sc" min="0.7" max="1.3" step="0.05" value="'+s.scale+'" style="width:100%"></label>'+
+ ck('st_wave',s.wave,'Gelombang audio di bagian bawah (hanya pada hasil render, butuh audio)')+ck('st_vig',s.vignette,'Vignette')+ck('st_ai',s.ai,'Biarkan AI menentukan warna, font &amp; efek tiap baris')+
+ '<button class="bt" data-a="stplan">🤖 Buat Rencana AI</button><small>'+(p.plan?('Rencana: <b>'+(p.plan.source==='ai'?'AI':'preset aturan')+'</b> • mood '+esc(p.plan.mood||'-')+(p.plan.note?' • '+esc(p.plan.note):'')):'Belum ada rencana. Tanpa kunci AI di server, yang dipakai adalah preset aturan (bukan AI).')+'</small></div>'+
+ '<div class="pn"><b>④ Preview</b><canvas id="stcv" class="stcv" width="270" height="480"></canvas><div class="row" style="margin-top:8px"><button class="bt p" data-a="stpv">▶ Preview</button><button class="bt" data-a="sttap">🎯 Tap-Sync</button><button class="bt" data-a="stmark" id="stmark" style="display:none">Tandai baris berikutnya</button></div><input type="range" id="stseek" min="0" max="1000" value="0" style="width:100%"><small id="stinfo">Preview mendekati hasil render (font/efek bisa sedikit berbeda; gelombang audio hanya di hasil akhir). Tap-Sync: putar lagu lalu tekan “Tandai” tepat saat tiap baris dinyanyikan.</small></div>'+
+ '<div class="pn"><div class="row"><button class="bt p" data-a="stsave">💾 Simpan proyek</button><button class="bt p" data-a="strender">🎬 Render Video di Server</button></div><div id="stst">'+stStatusHTML()+'</div></div>'+stPriv}
+function stRead(){const g=id=>{const e=$('#'+id);return e?e.value:''},c=id=>{const e=$('#'+id);return!!(e&&e.checked)},r=($('input[name=stsrc]:checked')||{}).value||'none';let type=r;
+ if(r==='upload'){const f=ST.file;type=f?(f.type.startsWith('video')?'upload_video':'upload_audio'):(/^upload/.test(ST.sp.source_type||'')?ST.sp.source_type:'none')}
+ const lyr=g('st_lyr').trim(),P=stParse(lyr),tap=ST.tap&&ST.tap.length===P.lines.length&&ST.tap.every((x,i)=>x.text===P.lines[i].text)?ST.tap:null;
+ return{creator_name:g('st_name').trim(),creator_ig:igc(g('st_ig'))||null,title:(g('st_title').trim()||'Tanpa judul').slice(0,100),source_type:type,source_url:(type==='youtube'||type==='tiktok')?g('st_url').trim():null,rights_confirmed:c('st_rights'),rights_note:g('st_rnote').trim().slice(0,300)||null,lyrics:lyr,lyrics_rights:g('st_lrights').trim().slice(0,300)||null,timings:tap,
+  style:{font:g('st_font'),textColor:g('st_tc'),accent:g('st_ac'),bg1:g('st_b1'),bg2:g('st_b2'),bg3:g('st_b3'),effect:g('st_eff'),ratio:g('st_ratio'),wave:c('st_wave'),vignette:c('st_vig'),align:g('st_align'),scale:+g('st_sc')||1,ai:c('st_ai')}}}
+function stCheck(d){if(d.creator_name.length<2)return'Nama tampilan wajib diisi (min. 2 huruf)';if(!d.lyrics)return'Lirik wajib diisi';
+ if(d.source_type==='youtube'&&!ytid(d.source_url))return'Link YouTube tidak valid';if(d.source_type==='tiktok'&&!/^https:\/\/([a-z0-9-]+\.)*tiktok\.com\//i.test(d.source_url||''))return'Link TikTok harus berawalan https:// dan berdomain tiktok.com';
+ const f=ST.file;if(f){if(/^video\//.test(f.type)?(f.type!=='video/mp4'||f.size>50e6):(f.type!=='audio/mpeg'&&f.type!=='audio/mp3'||f.size>25e6))return'File harus MP3 (≤25 MB) atau MP4 (≤50 MB)'}
+ if(d.source_type==='none'&&$('input[name=stsrc]:checked')&&$('input[name=stsrc]:checked').value==='upload'&&!f)return'Pilih file MP3/MP4 atau ganti jenis sumber';return''}
+function stUp(bucket,path,file,onp){return stTok().then(t=>new Promise((ok,no)=>{const x=new XMLHttpRequest();x.open('POST',SB.url+'/storage/v1/object/'+bucket+'/'+encodeURI(path));x.setRequestHeader('apikey',SB.key);x.setRequestHeader('Authorization','Bearer '+t);x.setRequestHeader('Content-Type',file.type);x.setRequestHeader('x-upsert','true');
+ x.upload.onprogress=e=>{if(e.lengthComputable&&onp)onp(Math.round(e.loaded/e.total*100))};x.onload=()=>{if(x.status<300)return ok();let m='HTTP '+x.status;try{m=JSON.parse(x.responseText).message||m}catch(e){}no(Error(m))};x.onerror=()=>no(Error('Jaringan terputus'));x.send(file)}))}
+async function stSave(){const d=stRead(),er=stCheck(d);if(er)throw Error(er);const p=ST.sp;let row;
+ if(p.id)row=(await ss('/rest/v1/studio_projects?id=eq.'+p.id,{m:'PATCH',j:d,h:{Prefer:'return=representation'}}))[0];
+ else row=(await ss('/rest/v1/studio_projects',{m:'POST',j:d,h:{Prefer:'return=representation'}}))[0];
+ if(!row)throw Error('Proyek tidak dapat disimpan (terkunci?)');
+ if(ST.file){const f=ST.file,path=stUid()+'/'+row.id+'/source.'+(f.type.startsWith('video')?'mp4':'mp3'),b=$('#stst');if(b)b.innerHTML='<small>Mengunggah file…</small>';
+  await stUp('studio-src',path,f,pc=>{if(b)b.innerHTML='<small>Mengunggah file… '+pc+'%</small>'});
+  row=(await ss('/rest/v1/studio_projects?id=eq.'+row.id,{m:'PATCH',j:{source_path:path,source_name:f.name.slice(0,150)},h:{Prefer:'return=representation'}}))[0];ST.file=null}
+ ST.sp=Object.assign(ST.sp,row);return row}
+A.stsave=async(d,b)=>{b.disabled=1;try{await stSave();toast('Proyek tersimpan');rr()}catch(e){toast(stErr(e),'err')}b.disabled=0};
+document.addEventListener('change',e=>{if(e.target.id==='st_file'){ST.file=e.target.files[0]||null;const r=document.querySelector('input[name=stsrc][value=upload]');if(r&&ST.file)r.checked=true;
+ if(ST.file){const m=document.createElement(ST.file.type.startsWith('video')?'video':'audio');m.preload='metadata';m.onloadedmetadata=()=>{if(m.duration>240){toast('Durasi '+Math.round(m.duration)+' dtk melebihi batas 240 dtk (4 menit)','err');ST.file=null;e.target.value=''}};m.src=URL.createObjectURL(ST.file)}}});
+
+/* ---- render, rencana AI, progres ---- */
+async function stEnqueue(kind){const row=await stSave();await ss('/rest/v1/rpc/studio_enqueue',{m:'POST',j:{p_id:row.id,p_kind:kind}});ST.job={kind,status:'queued',progress:0};rr();stPoll()}
+A.strender=async(d,b)=>{b.disabled=1;try{await stEnqueue('render');toast('Render diantrekan di server')}catch(e){toast(stErr(e),'err')}b.disabled=0};
+A.stplan=async(d,b)=>{b.disabled=1;try{await stEnqueue('plan');toast('Rencana AI diminta')}catch(e){toast(stErr(e),'err')}b.disabled=0};
+async function stPoll(){clearTimeout(ST.poll);if(!ST.sp||!ST.sp.id||cur!=='studio')return;
+ try{const p=(await ss('/rest/v1/studio_projects?id=eq.'+ST.sp.id+'&select=*'))[0],j=(await ss('/rest/v1/studio_jobs?project_id=eq.'+ST.sp.id+'&select=kind,status,progress,error&order=created_at.desc&limit=1'))[0];
+  const planNew=p&&JSON.stringify(p.plan)!==JSON.stringify(ST.sp.plan);if(p)Object.assign(ST.sp,p);ST.job=j||null;const b=$('#stst');if(b)b.innerHTML=stStatusHTML();
+  if(planNew&&j&&j.kind==='plan'&&j.status==='done'){toast('Rencana AI siap');rr()}
+  if(j&&(j.status==='queued'||j.status==='running')||p&&p.render_status==='queued'||p&&p.render_status==='processing')ST.poll=setTimeout(stPoll,2500)}catch(e){ST.poll=setTimeout(stPoll,6000)}}
+function stStatusHTML(){const p=ST.sp||{},j=ST.job;if(!p.id)return'<small>Simpan atau render proyek untuk memulai.</small>';let h='';
+ const act=j&&(j.status==='queued'||j.status==='running'),pr=act?(j.progress||0):(p.render_status==='processing'?p.render_progress:0);
+ if(act||p.render_status==='queued'||p.render_status==='processing')h+='<p>'+(j&&j.kind==='plan'?'🤖 AI merancang gerak…':p.render_status==='queued'||(j&&j.status==='queued')?'⏳ Menunggu server render…':'🎞 Merender video… '+pr+'%')+'</p><div class="pbar"><i style="width:'+pr+'%"></i></div><small>Jika antre lebih dari 1–2 menit, worker server belum berjalan.</small>';
+ if(p.render_status==='failed'||(j&&j.status==='failed'))h+='<p>❌ Gagal: '+esc(p.render_error||(j&&j.error)||'tidak diketahui')+'</p>';
+ if(p.render_status==='done'&&p.wm_path){h+='<p>✅ Render selesai'+(p.duration?' ('+Math.round(p.duration)+' dtk)':'')+'</p><div class="row"><button class="bt p" data-a="stdl" data-k="wm">⬇ Unduh (watermark rizarz9)</button></div><p style="margin-top:10px"><b>Persetujuan admin:</b> <span class="chip st-'+(p.approval==='pending'?'pending':p.approval)+'">'+APL[p.approval]+'</span></p>';
+  if(p.admin_note)h+='<div class="pn"><b>Catatan admin</b><p>'+esc(p.admin_note)+'</p></div>';
+  if(p.approval==='draft'||p.approval==='rejected')h+='<button class="bt" data-a="stsubmit">📨 Ajukan ke Admin untuk Persetujuan</button>'+(p.approval==='rejected'?'<small>Ditolak: kamu hanya dapat mengunduh versi watermark. Perbaiki, render ulang, lalu ajukan lagi.</small>':'<small>Tanpa persetujuan, hanya versi watermark yang dapat diunduh.</small>');
+  if(p.approval==='pending')h+='<small>Menunggu keputusan admin. Proyek terkunci selama ditinjau.</small>';
+  if(p.approval==='approved')h+='<div class="row"><button class="bt p" data-a="stdl" data-k="clean">⬇ Unduh tanpa watermark</button></div><small>Server memeriksa persetujuan pada setiap unduhan.</small>'}
+ return h||'<small>Belum dirender. Isi form lalu tekan “Render Video di Server”.</small>'}
+A.stsubmit=async()=>{try{await ss('/rest/v1/rpc/studio_submit',{m:'POST',j:{p_id:ST.sp.id}});toast('Diajukan ke admin');await stPoll()}catch(e){toast(stErr(e),'err')}};
+A.stdl=async d=>{const p=ST.sp,clean=d.k==='clean',path=clean?p.clean_path:p.wm_path;if(!path)return toast('File belum tersedia','err');
+ try{const t=await stTok(),r=await fetch(SB.url+'/storage/v1/object/authenticated/'+(clean?'studio-clean':'studio-wm')+'/'+encodeURI(path),{headers:{apikey:SB.key,Authorization:'Bearer '+t}});
+  if(!r.ok){toast(clean?'Ditolak server: proyek belum disetujui admin (atau persetujuan dicabut).':'Gagal mengunduh ('+r.status+')','err');if(clean)stPoll();return}
+  const bl=await r.blob(),a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download='rizarz9-'+slug(p.title)+(clean?'':'-watermark')+'.mp4';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);toast('Unduhan dimulai')}catch(e){toast(stErr(e),'err')}};
+
+/* ---- preview canvas (mendekati hasil server) ---- */
+function stStop(){ST.play=false;cancelAnimationFrame(ST.raf);ST.raf=0;if(ST.med){try{ST.med.pause()}catch(e){}ST.med=null}ST.tapOn=false}
+const stClock=()=>ST.play?ST.off+(performance.now()-ST.t0)/1000:ST.off;
+async function stMedia(){const d=stRead();let url=null,kind='none';
+ if(ST.file){url=URL.createObjectURL(ST.file);kind=ST.file.type.startsWith('video')?'video':'audio'}
+ else if(ST.sp.source_path&&/^upload/.test(ST.sp.source_type||'')){try{const t=await stTok(),r=await fetch(SB.url+'/storage/v1/object/authenticated/studio-src/'+encodeURI(ST.sp.source_path),{headers:{apikey:SB.key,Authorization:'Bearer '+t}});if(!r.ok)throw Error('HTTP '+r.status);url=URL.createObjectURL(await r.blob());kind=ST.sp.source_type==='upload_video'?'video':'audio'}catch(e){toast('Sumber tidak dapat dimuat untuk preview: '+e.message,'err')}}
+ let m=null;if(url){m=document.createElement(kind==='video'?'video':'audio');m.src=url;m.playsInline=true;m.preload='auto';await new Promise(ok=>{m.onloadedmetadata=ok;m.onerror=ok;setTimeout(ok,5000)})}
+ const P=stParse(d.lyrics);ST.med=m&&isFinite(m.duration)?m:null;ST.dur=ST.med?ST.med.duration:Math.max(15,P.lines.length*3.2+6);return d}
+A.stpv=async()=>{if(ST.play){stStop();return}const d=await stMedia();const P=stParse(d.lyrics);if(!P.lines.length)return toast('Isi lirik dahulu','err');
+ const s=Object.assign({},ISTYLE,d.style),pl=ST.sp.plan;if(s.ai&&pl&&pl.source==='ai'){const q=pl.palette||{};s.bg1=q.bg1||s.bg1;s.bg2=q.bg2||s.bg2;s.bg3=q.bg3||s.bg3;s.textColor=q.text||s.textColor;s.accent=q.accent||s.accent;if(pl.font)s.font=pl.font}
+ ST.st=s;ST.tim=stTimings(d.lyrics,ST.dur).t;const cv=$('#stcv'),R={'9:16':[270,480],'16:9':[480,270],'1:1':[360,360]}[s.ratio];cv.width=R[0];cv.height=R[1];
+ ST.off=0;ST.t0=performance.now();ST.play=true;if(ST.med){ST.med.currentTime=0;ST.med.play().catch(()=>{})}cancelAnimationFrame(ST.raf);stFrame()};
+function stWrap(x,text,maxW){const w=text.split(' '),L=[];let c='';w.forEach(k=>{const t=c?c+' '+k:k;if(x.measureText(t).width>maxW&&c){L.push(c);c=k}else c=t});if(c)L.push(c);return L}
+function stText(x,W,H,text,age,left,i,s){const eff=s.effect!=='auto'?s.effect:((ST.sp.plan&&ST.sp.plan.lines&&ST.sp.plan.lines[i]&&ST.sp.plan.lines[i].effect)||MIXE[i%6]),size=Math.round(Math.min(W,H)*.078*s.scale),p=Math.min(1,age/.4),e=1-Math.pow(1-p,3),al=Math.min(1,age/.3,Math.max(0,left)/.3);
+ x.save();x.font='bold '+size+'px '+(FCSS[s.font]||FCSS.montserrat);x.textBaseline='middle';x.textAlign=s.align==='left'?'left':'center';x.globalAlpha=Math.max(0,al);
+ const L=stWrap(x,text,W*.84),lh=size*1.25,x0=s.align==='left'?W*.08:W/2;let dx=0,dy=0,sc=1;
+ if(eff==='slideup')dy=(1-e)*size*1.4;else if(eff==='slideleft')dx=(1-e)*W*.2;else if(eff==='zoom')sc=.55+.45*e;else if(eff==='bounce')sc=age<.16?.8+.36*(age/.16):age<.32?1.16-.16*((age-.16)/.16):1;else if(eff==='blur'&&'filter'in x)x.filter='blur('+(1-e)*8+'px)';
+ x.translate(x0+dx,H/2+dy);x.scale(sc,sc);x.shadowColor='rgba(0,0,0,.6)';x.shadowBlur=6;
+ const tot=text.length,fr=eff==='karaoke'?Math.min(1,age/Math.max(.5,(age+left)*.85)):0;let done=0;
+ L.forEach((ln,k)=>{const y=(k-(L.length-1)/2)*lh;x.fillStyle=s.textColor;x.fillText(ln,0,y);
+  if(eff==='karaoke'){const part=Math.max(0,Math.min(1,(fr*tot-done)/ln.length)),w=x.measureText(ln).width,l0=s.align==='left'?0:-w/2;x.save();x.beginPath();x.rect(l0,y-lh/2,w*part,lh);x.clip();x.fillStyle=s.accent;x.fillText(ln,0,y);x.restore();done+=ln.length+1}});
+ x.restore()}
+function stFrame(){const cv=$('#stcv');if(!cv||!ST.st||!ST.st.bg1){ST.raf=0;return}const x=cv.getContext('2d'),W=cv.width,H=cv.height,s=ST.st,t=ST.med?ST.med.currentTime:stClock();
+ if(ST.med&&ST.med.tagName==='VIDEO'&&ST.med.readyState>1){const vw=ST.med.videoWidth,vh=ST.med.videoHeight,k=Math.max(W/vw,H/vh);x.drawImage(ST.med,(W-vw*k)/2,(H-vh*k)/2,vw*k,vh*k);x.fillStyle='rgba(0,0,0,.2)';x.fillRect(0,0,W,H)}
+ else{const a=t*.12,gx=Math.cos(a)*W*.5,gy=Math.sin(a)*H*.5,g=x.createLinearGradient(W/2-gx,H/2-gy,W/2+gx,H/2+gy);g.addColorStop(0,s.bg1);g.addColorStop(.5,s.bg2);g.addColorStop(1,s.bg3);x.fillStyle=g;x.fillRect(0,0,W,H)}
+ if(s.vignette){const v=x.createRadialGradient(W/2,H/2,Math.min(W,H)*.3,W/2,H/2,Math.max(W,H)*.75);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.55)');x.fillStyle=v;x.fillRect(0,0,W,H)}
+ const T=ST.tim;let i=-1;for(let k=0;k<T.length;k++){if(T[k].t<=t)i=k;else break}
+ if(i>=0){const st=T[i].t,en=Math.min(i+1<T.length?T[i+1].t-.05:ST.dur-.2,st+9);if(t<=en)stText(x,W,H,T[i].text,t-st,en-t,i,s)}
+ x.save();x.globalAlpha=.55;x.fillStyle='#fff';x.font='bold '+Math.round(W*.045)+'px sans-serif';x.textAlign='right';x.fillText('rizarz9',W-8,H-10);x.restore();   /* watermark kecil di preview */
+ const sk=$('#stseek');if(sk&&ST.dur)sk.value=Math.min(1000,t/ST.dur*1000);
+ if(ST.play&&t>=ST.dur){stStop();return}ST.raf=requestAnimationFrame(stFrame)}
+document.addEventListener('input',e=>{if(e.target.id==='stseek'&&ST.dur){const t=e.target.value/1000*ST.dur;if(ST.med)ST.med.currentTime=t;ST.off=t;ST.t0=performance.now()}});
+A.sttap=async()=>{stStop();const P=stParse(stRead().lyrics);if(!P.lines.length)return toast('Isi lirik dahulu','err');ST.tapOn=true;ST.tapI=0;ST.tapT=[];ST.tap=null;await A.stpv();ST.tim=[];
+ $('#stmark').style.display='';$('#stinfo').innerHTML='Baris 1: <b>'+esc(P.lines[0].text)+'</b> — tekan “Tandai” saat dinyanyikan.'};
+A.stmark=()=>{const P=stParse(stRead().lyrics),t=ST.med?ST.med.currentTime:stClock();if(!ST.tapOn)return;ST.tapT.push(+t.toFixed(2));ST.tapI++;
+ if(ST.tapI>=P.lines.length){ST.tap=P.lines.map((l,i)=>({t:ST.tapT[i],text:l.text}));ST.tim=ST.tap;ST.tapOn=false;$('#stmark').style.display='none';$('#stinfo').textContent='Sinkronisasi manual tersimpan di form. Tekan “Simpan proyek”, lalu render.';toast('Tap-Sync selesai')}
+ else{ST.tim=P.lines.slice(0,ST.tapI).map((l,i)=>({t:ST.tapT[i],text:l.text}));$('#stinfo').innerHTML='Baris '+(ST.tapI+1)+': <b>'+esc(P.lines[ST.tapI].text)+'</b>'}};
+
+/* ---- ADMIN: tinjau, setujui/tolak, catatan revisi ---- */
+let AST=[],SPN=0;
+async function ldAst(q){if(!sbAdm())return;try{AST=await sb('/rest/v1/studio_projects?select=*&order=created_at.desc&limit=100');S.ase=''}catch(e){S.ase=e.message}
+ const n=AST.filter(x=>x.approval==='pending').length;if(q&&n>SPN)toast('🎞 '+n+' video Studio menunggu persetujuan');SPN=n;abtn();if(cur==='astudio'||cur==='admin')rr()}
+abtn=function(){$('#ab').innerHTML=(isA()?'👤 Admin ✓':'👤 Login Admin')+(isA()&&SPN?'<span class="bdg" title="Video Studio menunggu">'+SPN+'</span>':'')};
+V.astudio=()=>{if(!isA())return V.beranda();if(!sbAdm())return hd('Studio Lirik (Persetujuan)')+'<div class="pn"><small>'+(SBOK()?'Masuk database admin dahulu.':'Database belum dikonfigurasi.')+'</small></div>'+(SBOK()?'<button class="bt p" data-a="dbl">Masuk Database</button>':'');
+ if(!S.asx){S.asx=1;ldAst().finally(()=>S.asx=0)}
+ return hd('Studio Lirik (Persetujuan)','<button class="bt" data-a="go" data-v="admin">‹ Dashboard</button>')+(S.ase?'<div class="pn"><small>⚠ '+esc(S.ase)+'</small></div>':'')+
+ (AST.map(p=>{const src=p.source_type==='youtube'||p.source_type==='tiktok'?'<a href="'+esc(p.source_url)+'" target="_blank" rel="noopener" style="color:var(--cy)">'+p.source_type+' (referensi)</a>':({none:'tanpa audio',upload_audio:'MP3 unggahan',upload_video:'MP4 unggahan'}[p.source_type]);const dec=p.approval==='pending'||p.approval==='approved'||p.approval==='rejected';
+  return'<div class="pn"><b>'+esc(p.title)+'</b> <span class="chip st-'+(p.approval==='pending'?'pending':p.approval)+'">'+APL[p.approval]+'</span> <span class="chip">'+RNL[p.render_status]+'</span><small>Oleh '+esc(p.creator_name)+(p.creator_ig?' • @'+esc(p.creator_ig):'')+' • '+wt(p.created_at)+(p.duration?' • '+Math.round(p.duration)+' dtk':'')+'</small><small>Sumber: '+src+' • Izin: '+esc(p.rights_confirmed?'dinyatakan':'belum')+(p.rights_note?' — '+esc(p.rights_note):'')+'</small><small>Lirik: '+esc(p.lyrics_rights||'(tanpa keterangan izin)')+'</small><details><summary><small>Lihat lirik</small></summary><small style="white-space:pre-wrap">'+esc(p.lyrics.slice(0,2000))+'</small></details>'+
+  (p.render_status==='done'?'<div class="row" style="margin:8px 0"><button class="bt" data-a="aspv" data-id="'+p.id+'" data-k="wm">▶ Preview (watermark)</button><button class="bt" data-a="aspv" data-id="'+p.id+'" data-k="clean">▶ Preview tanpa watermark</button></div>':'<small>Render belum selesai.</small>')+
+  (dec?'<textarea class="in" id="an-'+p.id+'" rows="2" maxlength="500" placeholder="Catatan revisi / alasan (terlihat oleh pengaju)">'+esc(p.admin_note||'')+'</textarea><div class="row"><button class="bt p" data-a="asdec" data-id="'+p.id+'" data-d="approved">✅ SETUJUI</button><button class="bt d" data-a="asdec" data-id="'+p.id+'" data-d="rejected">✖ TOLAK</button></div>':'<small>Belum diajukan pemilik (draft).</small>')+'<button class="bt" style="margin-top:6px;padding:6px 12px" data-a="asdel" data-id="'+p.id+'">🗑 Hapus proyek</button></div>'}).join('')||'<div class="pn"><small>Belum ada proyek.</small></div>')};
+A.asdec=async d=>{const p=AST.find(x=>x.id===d.id),note=($('#an-'+d.id)||{}).value||'';if(!p)return;if(d.d==='rejected'&&!note.trim()&&!confirm('Tolak tanpa catatan revisi?'))return;
+ try{await sb('/rest/v1/rpc/studio_decide',{m:'POST',j:{p_id:p.id,p_decision:d.d,p_note:note}});toast(d.d==='approved'?'Disetujui — pengaju kini dapat mengunduh tanpa watermark':'Ditolak — pengaju hanya dapat unduh versi watermark');await ldAst()}catch(e){toast('Gagal: '+stErr(e),'err')}};
+A.aspv=async d=>{const p=AST.find(x=>x.id===d.id),clean=d.k==='clean',path=clean?p.clean_path:p.wm_path;if(!path)return toast('File belum ada','err');
+ try{await sb('/rest/v1/rpc/is_admin',{m:'POST',j:{}});const r=await fetch(SB.url+'/storage/v1/object/authenticated/'+(clean?'studio-clean':'studio-wm')+'/'+encodeURI(path),{headers:{apikey:SB.key,Authorization:'Bearer '+SBT}});if(!r.ok)throw Error('HTTP '+r.status);
+  const u=URL.createObjectURL(await r.blob());dlg(esc(p.title)+(clean?' (tanpa watermark)':' (watermark)'),'<video controls playsinline autoplay src="'+u+'"></video>','w')}catch(e){toast('Gagal memuat preview: '+e.message,'err')}};
+A.asdel=async d=>{const p=AST.find(x=>x.id===d.id);if(!p||!confirm('Hapus proyek ini beserta file-nya?'))return;
+ try{for(const [b,k] of [['studio-src','source_path'],['studio-wm','wm_path'],['studio-clean','clean_path']])if(p[k])await sb('/storage/v1/object/'+b+'/'+encodeURI(p[k]),{m:'DELETE'}).catch(()=>{});await sb('/rest/v1/studio_projects?id=eq.'+encodeURIComponent(p.id),{m:'DELETE'});slog('Hapus proyek Studio');toast('Proyek dihapus');await ldAst()}catch(e){toast('Gagal: '+e.message,'err')}};
+C.push(['studio','🎬','AI Lyrics Studio','Buat video lirik animasi dari lagumu.']);
+
+const o_dbls4=A.dbls;A.dbls=async(d,b)=>{await o_dbls4(d,b);ldAst(1)};
+const o_out4=A.out;A.out=()=>{AST=[];SPN=0;o_out4()};
+
+/* ===== STUDIO v2: MODE BROWSER (tanpa server) + CEK SISTEM =====
+ * Mode Browser merender video di perangkat pengguna (Canvas + MediaRecorder). Watermark "rizarz9" digambar ke SETIAP frame,
+ * jadi tertanam di file hasil. Mode ini TIDAK mengenal persetujuan admin: hasilnya selalu berwatermark.
+ * Versi tanpa watermark hanya lewat alur server (render di worker + keputusan admin di database). */
+const stFmt=()=>['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(t=>window.MediaRecorder&&MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(t));
+function stStyle(d){const s=Object.assign({},ISTYLE,d.style),pl=ST.sp&&ST.sp.plan;if(s.ai&&pl&&pl.source==='ai'){const q=pl.palette||{};s.bg1=q.bg1||s.bg1;s.bg2=q.bg2||s.bg2;s.bg3=q.bg3||s.bg3;s.textColor=q.text||s.textColor;s.accent=q.accent||s.accent;if(pl.font)s.font=pl.font}return s}
+/* melukis satu frame ke kanvas cv pada waktu t. full=true -> watermark permanen 3 posisi (untuk hasil unduhan) */
+function stPaint(cv,t,full){const x=cv.getContext('2d'),W=cv.width,H=cv.height,s=ST.st;
+ if(ST.med&&ST.med.tagName==='VIDEO'&&ST.med.readyState>1){const vw=ST.med.videoWidth,vh=ST.med.videoHeight,k=Math.max(W/vw,H/vh);x.drawImage(ST.med,(W-vw*k)/2,(H-vh*k)/2,vw*k,vh*k);x.fillStyle='rgba(0,0,0,.2)';x.fillRect(0,0,W,H)}
+ else{const a=t*.12,gx=Math.cos(a)*W*.5,gy=Math.sin(a)*H*.5,g=x.createLinearGradient(W/2-gx,H/2-gy,W/2+gx,H/2+gy);g.addColorStop(0,s.bg1);g.addColorStop(.5,s.bg2);g.addColorStop(1,s.bg3);x.fillStyle=g;x.fillRect(0,0,W,H)}
+ if(s.vignette){const v=x.createRadialGradient(W/2,H/2,Math.min(W,H)*.3,W/2,H/2,Math.max(W,H)*.75);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.55)');x.fillStyle=v;x.fillRect(0,0,W,H)}
+ const T=ST.tim;let i=-1;for(let k=0;k<T.length;k++){if(T[k].t<=t)i=k;else break}
+ if(i>=0){const st=T[i].t,en=Math.min(i+1<T.length?T[i+1].t-.05:ST.dur-.2,st+9);if(t<=en)stText(x,W,H,T[i].text,t-st,en-t,i,s)}
+ const u=Math.round(Math.min(W,H)*.045);x.save();x.textBaseline='middle';x.fillStyle='#fff';x.strokeStyle='rgba(0,0,0,.6)';x.lineWidth=Math.max(2,u/10);
+ if(!full){x.globalAlpha=.55;x.textAlign='right';x.font='bold '+u+'px sans-serif';x.fillText('rizarz9',W-8,H-10)}
+ else{x.globalAlpha=.75;x.textAlign='right';x.font='bold '+u+'px Montserrat,sans-serif';x.strokeText('rizarz9',W-24,H-24-u/2);x.fillText('rizarz9',W-24,H-24-u/2);
+  x.globalAlpha=.7;x.textAlign='left';x.font='bold '+Math.round(u*.9)+'px Montserrat,sans-serif';x.strokeText('rizarz9',24,24+u/2);x.fillText('rizarz9',24,24+u/2);
+  x.translate(W/2,H/2);x.rotate(-28*Math.PI/180);x.globalAlpha=.3;x.textAlign='center';x.font='bold '+(u*3)+'px Montserrat,sans-serif';x.fillText('rizarz9',0,0)}
+ x.restore()}
+stFrame=function(){const cv=$('#stcv');if(!cv||!ST.st||!ST.st.bg1){ST.raf=0;return}const t=ST.med?ST.med.currentTime:stClock();stPaint(cv,t,false);const sk=$('#stseek');if(sk&&ST.dur)sk.value=Math.min(1000,t/ST.dur*1000);if(ST.play&&t>=ST.dur){stStop();return}ST.raf=requestAnimationFrame(stFrame)};
+A.stlocal=async(d,b)=>{const dd=stRead(),P=stParse(dd.lyrics);
+ if(!P.lines.length)return toast('Isi lirik dahulu','err');if(!dd.rights_confirmed)return toast('Centang pernyataan izin penggunaan dahulu','err');
+ if(typeof MediaRecorder==='undefined'||!HTMLCanvasElement.prototype.captureStream)return toast('Browser ini tidak mendukung render lokal. Pakai Chrome, Edge, Firefox, atau Safari terbaru.','err');
+ const mime=stFmt();if(!mime)return toast('Browser tidak mendukung format rekam video','err');if(ST.rec)return toast('Render sedang berjalan','err');
+ const f=ST.file;if(f&&(f.size>(f.type.startsWith('video')?50e6:25e6)))return toast('File terlalu besar (MP3 ≤25 MB, MP4 ≤50 MB)','err');
+ b.disabled=1;stStop();const stat=(p,m)=>{const el=$('#stloc');if(el)el.innerHTML='<p>⚡ '+(m||'Merender di browser…')+' '+p+'%</p><div class="pbar"><i style="width:'+p+'%"></i></div><small>Biarkan tab ini tetap terbuka &amp; aktif sampai selesai (lama render = durasi lagu).</small>'};
+ try{stat(0,'Menyiapkan…');await stMedia();if(ST.dur>240)throw Error('Durasi melebihi 4 menit');
+  const s=stStyle(dd);ST.st=s;ST.tim=stTimings(dd.lyrics,ST.dur).t;const R={'9:16':[540,960],'16:9':[960,540],'1:1':[720,720]}[s.ratio],cv=document.createElement('canvas');cv.width=R[0];cv.height=R[1];
+  const out=cv.captureStream(30);let AC=null;
+  if(ST.med){AC=new(window.AudioContext||window.webkitAudioContext)();const src=AC.createMediaElementSource(ST.med),dest=AC.createMediaStreamDestination();src.connect(dest);dest.stream.getAudioTracks().forEach(t=>out.addTrack(t));await AC.resume()}
+  const ch=[],rec=new MediaRecorder(out,{mimeType:mime,videoBitsPerSecond:2500000,audioBitsPerSecond:128000});ST.rec=rec;rec.ondataavailable=e=>{if(e.data&&e.data.size)ch.push(e.data)};const done=new Promise(ok=>{rec.onstop=ok});
+  rec.start(500);ST.off=0;ST.t0=performance.now();ST.play=true;if(ST.med){ST.med.currentTime=0;await ST.med.play()}
+  await new Promise(ok=>{const tick=()=>{const t=ST.med?ST.med.currentTime:stClock();stPaint(cv,t,true);stat(Math.min(99,Math.round(t/ST.dur*100)));if(t>=ST.dur-.05||(ST.med&&ST.med.ended))ok();else requestAnimationFrame(tick)};tick()});
+  await new Promise(r=>setTimeout(r,300));rec.stop();await done;out.getTracks().forEach(t=>t.stop());if(AC)AC.close();stStop();
+  const ext=mime.includes('mp4')?'mp4':'webm',blob=new Blob(ch,{type:mime.split(';')[0]});if(blob.size<1000)throw Error('Hasil rekaman kosong');const url=URL.createObjectURL(blob);ST.loc={url,ext,title:dd.title};
+  const el=$('#stloc');if(el)el.innerHTML='<p>✅ Selesai — watermark rizarz9 tertanam di setiap frame</p><video controls playsinline src="'+url+'" style="width:100%;max-width:360px;border-radius:12px"></video><div class="row" style="margin-top:8px"><button class="bt p" data-a="stlocdl">⬇ Unduh ('+ext+', watermark)</button></div><small>Versi tanpa watermark hanya tersedia lewat persetujuan admin (butuh server).</small>';toast('Render selesai')}
+ catch(e){stStop();const el=$('#stloc');if(el)el.innerHTML='<small>❌ '+esc(stErr(e))+'</small>';toast('Render gagal: '+stErr(e),'err')}
+ ST.rec=null;b.disabled=0};
+A.stlocdl=()=>{const l=ST.loc;if(!l)return;const a=document.createElement('a');a.href=l.url;a.download='rizarz9-'+slug(l.title)+'-watermark.'+l.ext;document.body.append(a);a.click();a.remove();toast('Unduhan dimulai')};
+A.stcheck=async()=>{const R=[],add=(ok,t,h)=>R.push('<div class="ln"><span>'+(ok?'✅':'❌')+'</span><div><b>'+t+'</b>'+(h?'<small>'+h+'</small>':'')+'</div></div>');
+ add(SBOK(),'Konfigurasi Supabase',SBOK()?esc(SB.url):esc(SBERR||'URL/anon key belum diisi di config.js'));let ok=false;
+ if(SBOK()){try{await stTok();add(true,'Sesi anonim (Anonymous sign-ins)');ok=true}catch(e){add(false,'Sesi anonim gagal',esc(e.message))}}
+ if(ok){try{await ss('/rest/v1/studio_projects?select=id&limit=1');add(true,'Tabel studio & izin akses (RLS)')}catch(e){add(false,'Tabel Studio belum siap',esc(e.message)+' — jalankan backend/studio_setup.sql')}
+  try{const j=await ss('/rest/v1/studio_jobs?select=created_at&status=eq.queued&order=created_at.asc&limit=1');if(j&&j[0]&&Date.now()-new Date(j[0].created_at)>12e4)add(false,'Worker render tampaknya belum berjalan','Ada job antre lebih dari 2 menit. Jalankan worker (backend/render-worker/README.md).');else add(true,'Antrean render','Tidak ada job tertahan. Status worker pasti terlihat saat kamu merender di server.')}catch(e){}}
+ add(!!stFmt(),'Render di Browser',stFmt()?'Didukung ('+stFmt().split(';')[0]+')':'Browser ini tidak mendukung perekaman kanvas');
+ dlg('Cek Sistem Studio',R.join('')+'<small>Mode Browser tidak membutuhkan server. Persetujuan admin &amp; versi tanpa watermark membutuhkan database + worker.</small>')};
+const o_vs=V.studio;
+V.studio=()=>{if(SBOK())return o_vs().replace('<span class="chip">Beta</span>','<span class="chip">Server + Browser</span><button class="bt" data-a="stcheck">🩺 Cek Sistem</button>').replace(stPriv,'<div class="pn"><b>⚡ Mode Browser (tanpa server)</b><small>Buat video langsung di perangkatmu. Hasil selalu berwatermark rizarz9.</small><button class="bt" data-a="stnew" style="margin-top:6px">Buat video di browser</button></div>'+stPriv);
+ if(!ST.sp)ST.sp={style:{...ISTYLE},source_type:'none'};
+ return hd('AI Lyrics Motion Studio','<span class="chip">Mode Browser</span><button class="bt" data-a="stcheck">🩺 Cek Sistem</button>')+'<div class="pn"><small>ℹ️ Server render &amp; database belum aktif ('+esc(SBERR||'config.js belum diisi')+'), jadi simpan proyek, rencana AI, persetujuan admin, dan versi tanpa watermark belum tersedia. <b>Render di Browser tetap berfungsi</b>; hasilnya selalu berwatermark rizarz9.</small></div>'+stEditor()+stPriv};
+const o_ed=stEditor;
+stEditor=function(){const on=SBOK();let h=o_ed();
+ h=h.replace('<div class="row"><button class="bt p" data-a="stsave">💾 Simpan proyek</button><button class="bt p" data-a="strender">🎬 Render Video di Server</button></div>',(on?'<div class="row"><button class="bt" data-a="stsave">💾 Simpan proyek</button><button class="bt p" data-a="strender">🎬 Render di Server (bisa diajukan ke admin)</button></div>':'')+'<div class="row" style="margin-top:6px"><button class="bt p" data-a="stlocal">⚡ Render di Browser (watermark, tanpa server)</button></div><div id="stloc"></div>');
+ if(!on)h=h.replace('<button class="bt" data-a="stplan">🤖 Buat Rencana AI</button>','<small>Rencana AI membutuhkan server; mode browser memakai campuran efek otomatis.</small>');return h};
+const o_sh=stStatusHTML;stStatusHTML=function(){return SBOK()?o_sh():''};
+
 /* ---- Init ---- */
 $$('.lg').forEach(i=>i.src=LOGO);$('#fav').href=LOGO;
 $('#nav').innerHTML=N.map(n=>'<button data-a="go" data-v="'+n[0]+'"><span>'+n[1]+'</span><span class="tx">'+n[2]+'</span></button>').join('');
@@ -590,7 +817,7 @@ setInterval(tick,250);
 if(D.set.auto)document.addEventListener('click',()=>{if(pi<0&&LS().length)play(0)},{once:true});
 try{localStorage.removeItem("rzss")}catch(e){}
 ui();rtStart();dbCheck();ldWx();setInterval(ldWx,6e5);
-if(SBOK()){ldPh();ldPl();ldVd();ldQuota();setInterval(()=>{ldPh();ldPl();ldVd();ldQuota()},6e4)}
+if(SBOK()){ldPh();ldPl();ldVd();ldQuota();if(sbAdm())ldAst(1);setInterval(()=>{ldPh();ldPl();ldVd();ldQuota();if(sbAdm())ldAst(1)},6e4)}
 setInterval(()=>{if(cur==='rating'&&SBOK())ldRt()},2e4);
 go((location.hash||'').slice(1)||'beranda');
 </script></body></html>
